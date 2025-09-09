@@ -1,0 +1,623 @@
+/* ======================= */
+/* RESET BÁSICO            */
+/* ======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* ======================= */
+/* fade-in       */
+/* ======================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======================= */
+/* RESET BÁSICO            */
+/* ======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* ======================= */
+/* HEADER / NAVBAR         */
+/* ======================= */
+header {
+    background-color: #004466;
+    padding: 15px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 65px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links li a.active,
+.navbar .nav-links li a:hover {
+    color: #00cc99;
+}
+
+.navbar .nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #00cc99;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-links li a:hover::after,
+.navbar .nav-links li a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+
+/* ======================= */
+/* HERO SERVIÇOS           */
+/* ======================= */
+.hero-servicos {
+    background-color: #e6f2ff;
+    color: #fff;
+    min-height: 36vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 36px 16px;
+    color: #004466;
+}
+
+.hero-servicos .container {
+    max-width: 980px;
+}
+
+.hero-servicos h1 {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-servicos p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    max-width: 820px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* ======================= */
+/* SEÇÃO PRINCIPAL SERVIÇOS*/
+/* ======================= */
+.section.servicos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section.servicos h2 {
+    font-size: 2rem;
+    color: #004466;
+    margin-bottom: 10px;
+}
+
+.section.servicos .subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* RESET DE LISTAS DENTRO DE CARDS */
+.section.servicos ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.section.servicos ul li {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+}
+
+.section.servicos ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #007BFF;
+}
+
+/* GRID DE SERVIÇOS */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CARD DE SERVIÇOS */
+.service-card {
+    flex: 1 1 300px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.icon_service {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #004466;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+/* ======================= */
+/* DIFERENCIAIS            */
+/* ======================= */
+.diferenciais {
+    padding: 80px 20px; /* espaço acima e abaixo */
+}
+
+.diferenciais .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.grid-diferenciais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card-dif {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-dif:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.card-dif h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #007BFF;
+}
+
+.card-dif p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+/* ======================= */
+/* FLUXO / PASSOS - CARDS  */
+/* ======================= */
+.fluxo {
+    padding: 80px 20px;
+}
+
+.fluxo .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.fluxo .steps {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* espaço entre os cards */
+}
+
+.fluxo .steps li {
+    counter-increment: step;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px 25px 20px 50px; /* espaço para o número circular */
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.fluxo .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007BFF;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 30px;
+    font-weight: 600;
+    margin-left: -5px;
+}
+
+.fluxo .steps li strong {
+    color: #007BFF;
+}
+/* ======================= */
+/* CALL TO ACTION - SERVIÇOS */
+/* ======================= */
+
+.cta {
+    text-align: center;
+    padding: 40px 20px; /* reduzido de 60px para 40px */
+    margin: 40px 0;     /* menor espaço externo, se quiser */
+}
+
+.cta h2 {
+    font-size: 2rem;
+    color: #004466;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.btn-cta {
+    padding: 14px 30px;
+    font-size: 1rem;
+    background-color: #00cc99;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #009973;
+}
+
+/* ======================= */
+/* FOOTER                  */
+/* ======================= */
+footer {
+    background-color: #004466;
+    color: #fff;
+    padding: 40px 20px 15px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-img {
+    width: 140px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    margin-bottom: 8px;
+    color: #00cc99;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 6px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #00cc99;
+}
+
+.footer-contact p {
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.footer-social a {
+    margin-right: 10px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.15);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 12px;
+    color: #ccc;
+    font-size: 0.8rem;
+}
+
+/* ======================= */
+/* RESPONSIVIDADE SERVIÇOS */
+/* ======================= */
+@media (max-width: 992px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-diferenciais {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-dif {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .fluxo .steps {
+        gap: 15px;
+    }
+
+    .fluxo .steps li {
+        padding: 20px 20px 20px 45px;
+    }
+
+    .fluxo .steps li::before {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Menu toggle */
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 68, 102, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 70%;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 9999;
+    }
+
+    .navbar .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .services-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .grid-diferenciais {
+        gap: 20px;
+    }
+
+    .card-dif {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .fluxo .steps li {
+        padding: 20px 15px 20px 45px;
+    }
+
+    .fluxo .steps li::before {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-servicos h1 {
+        font-size: 2rem;
+    }
+
+    .hero-servicos p {
+        font-size: 1rem;
+    }
+
+    .section.servicos h2 {
+        font-size: 1.6rem;
+    }
+
+    .section.servicos .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+
+    .card-dif h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-dif p {
+        font-size: 0.95rem;
+    }
+
+    .fluxo .steps li {
+        font-size: 0.95rem;
+        padding: 15px 12px 15px 40px;
+    }
+
+    .fluxo .steps li::before {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 0.85rem;
+    }
+
+    .cta h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta p {
+        font-size: 0.95rem;
+    }
+
+    .btn-cta {
+        font-size: 0.95rem;
+        padding: 12px 25px;
+    }
+}
