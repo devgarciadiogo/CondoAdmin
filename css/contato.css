@@ -111,7 +111,7 @@ header {
 /* HERO / INTRODUÇÃO       */
 /* ======================= */
 .hero-contact {
-    background-color: #e6f2ff; /* mesmo azul do servicos */
+    background-color: #e6f2ff; 
     color: #fff;
     min-height: 36vh;
     display: flex;
@@ -145,14 +145,12 @@ header {
 /* FORMULÁRIO / CARD       */
 /* ======================= */
 
-
-/* Wrapper para organizar formulário e WhatsApp lado a lado */
 .contact-wrapper {
     display: flex;
-    gap: 40px; /* espaço entre formulário e botão */
+    gap: 40px; 
     justify-content: center;
     align-items: flex-start;
-    margin-top: 60px; /* afasta do hero */
+    margin-top: 60px; 
     margin-bottom: 60px;
 }
 
@@ -237,13 +235,13 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 0 0 290px; /* largura fixa */
+    flex: 0 0 290px; 
 }
 
 .whatsapp-contact a {
     display: flex;
     align-items: center;
-    gap: 10px; /* espaço entre ícone e texto */
+    gap: 10px; 
     padding: 14px 25px;
     background-color: #25d366;
     color: #fff;
@@ -260,7 +258,7 @@ header {
 }
 
 .whatsapp-icon {
-    width: 24px; /* tamanho do ícone */
+    width: 24px; 
     height: 24px;
 }
 

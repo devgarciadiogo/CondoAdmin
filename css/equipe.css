@@ -36,7 +36,6 @@ body {
 /* ======================= */
 /* HEADER / NAVBAR         */
 /* ======================= */
-/* usa o CSS principal do index */
 header {
     background-color: #004466;
     padding: 15px 20px;
@@ -112,7 +111,7 @@ header {
 /* SECTIONS / CONTAINERS   */
 /* ======================= */
 .section {
-    padding: 60px 20px; /* reduzido de 80px para 60px */
+    padding: 60px 20px; 
 }
 
 .container {
@@ -126,20 +125,19 @@ header {
 
 .section h2 {
     font-size: 2rem;
-    margin-bottom: 15px; /* reduzido */
+    margin-bottom: 15px; 
     color: #004466;
 }
 
 .section .subtitle {
     font-size: 1rem;
-    margin-bottom: 20px; /* reduzido */
+    margin-bottom: 20px; 
     color: #666;
 }
 /* ============================
    Página Equipe
 ============================ */
 
-/* HERO (topo da página) */
 .hero-equipe {
   background: #e6f2ff;
   min-height: 36vh;
@@ -260,7 +258,7 @@ header {
 }
 
 .team-social a {
-  width: 40px;    /* aumenta o quadrado do link */
+  width: 40px;    
   height: 40px;
   display: inline-block;
   align-items: center;
@@ -271,10 +269,10 @@ header {
 }
 
 .team-social a img {
-  width: 28px;   /* aumenta o ícone */
+  width: 28px;   
   height: 28px; 
-  border-radius: 0 !important; /* garante que não fica redondo */
-  box-shadow: none;           /* remove qualquer sombra que esteja vindo */
+  border-radius: 0 !important; 
+  box-shadow: none;           
   border: none;   
 }
 
@@ -363,7 +361,6 @@ header {
 /* ======================= */
 /* FOOTER                  */
 /* ======================= */
-/* usa o CSS principal do index */
 
 footer {
     background-color: #004466;

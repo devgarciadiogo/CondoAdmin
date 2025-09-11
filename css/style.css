@@ -112,7 +112,7 @@ header {
 /* SECTIONS / CONTAINERS   */
 /* ======================= */
 .section {
-    padding: 60px 20px; /* reduzido de 80px para 60px */
+    padding: 60px 20px; 
 }
 
 .container {
@@ -126,13 +126,13 @@ header {
 
 .section h2 {
     font-size: 2rem;
-    margin-bottom: 15px; /* reduzido */
+    margin-bottom: 15px; 
     color: #004466;
 }
 
 .section .subtitle {
     font-size: 1rem;
-    margin-bottom: 20px; /* reduzido */
+    margin-bottom: 20px; 
     color: #666;
 }
 
@@ -141,7 +141,7 @@ header {
 /* ======================= */
 .hero {
     position: relative;
-    height: 70vh; /* menor que antes, não ocupa quase a tela toda */
+    height: 70vh; 
     background: url("../images/condominio.jpg") no-repeat center center/cover;
     display: flex;
     align-items: center;
