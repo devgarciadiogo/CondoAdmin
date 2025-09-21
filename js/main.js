@@ -2,9 +2,14 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".navbar .nav-links");
 
+// Define atributos ARIA iniciais
+menuToggle.setAttribute("aria-expanded", "false");
+menuToggle.setAttribute("aria-controls", "nav-links");
+
 // Ao clicar no menu toggle
 menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show"); // Adiciona/remove a classe 'show'
+  const isOpen = navLinks.classList.toggle("show"); // Adiciona/remove a classe 'show'
+  menuToggle.setAttribute("aria-expanded", isOpen); // Atualiza o estado
 });
 
 // Fecha o menu ao clicar em algum link
@@ -12,6 +17,7 @@ navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     if (navLinks.classList.contains("show")) {
       navLinks.classList.remove("show");
+      menuToggle.setAttribute("aria-expanded", "false"); // Garante atualização
     }
   });
 });

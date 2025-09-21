@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CondoAdmin - Home</title>
+    <title>LM Administradora - Home</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header / Navbar -->
     <header>
-        <div class="navbar-container">
+        <div class="navbar-container ">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="CondoAdmin Logo">
+                <img src="images/Logo Leonardo Muniz Condominios.png" alt="Leonardo Muniz Condominios Logo">
             </a>
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
                     <li><a href="servicos.html">Serviços</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -33,122 +34,115 @@
 
     <!-- Hero / Banner Principal -->
     <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="videos/Video Hero LM Admin.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+    </video>
+    <script>
+        const video = document.getElementById('heroVideo');
+        
+        video.addEventListener('timeupdate', () => {
+            // reinicia 0.2s antes do final
+            if(video.currentTime >= video.duration - 0.2){
+            video.currentTime = 0;
+            video.play();
+            }
+        });
+    </script>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Gestão eficiente para o seu condomínio</h1>
-            <p>Transparência, inovação e confiança em cada detalhe.</p>
+            <h1>Gestão de condomínios com excelência</h1>
+            <p>LM Administradora — sua solução completa em gestão condominial</p>
+            <a href="#contato" class="btn">Solicite uma proposta</a>
         </div>
     </section>
 
-    <!-- Seção Sobre resumida -->
-    <section id="sobre" class="about-section">
-        <div class="container about-container fade-in">
-            <div class="about-text">
-                <h2>Sobre Nós</h2>
-                <p>Fundada em 2010, a CondoAdmin oferece soluções modernas e confiáveis para gestão de condomínios. Há mais de uma década atendendo centenas de clientes com transparência e eficiência.</p>
-                <a href="sobre.html" class="btn">Saiba mais</a>
-            </div>
-            <div class="about-image">
-                <img src="images/equipe.jpg" alt="Equipe de gestão reunida">
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Equipe resumida -->
-    <section id="equipe" class="section">
+    <!-- Seção de Apresentação da Empresa -->
+    <section id="apresentacao" class="presentation-section ">
         <div class="container fade-in">
-            <h2>Conheça Nossa Equipe</h2>
-            <p class="subtitle">Profissionais qualificados e dedicados à gestão do seu condomínio.</p>
-            <div class="team">
-                <div class="team-member">
-                    <img src="images/membro1.jpg" alt="João Silva">
-                    <h3>João Silva</h3>
-                    <span>Administrador</span>
-                    <p>Especialista em gestão condominial com mais de 10 anos de experiência.</p>
+            <p>
+                A <span class="highlight">LM Administradora</span> oferece <span class="highlight">soluções completas</span> em gestão condominial. 
+                Do <span class="highlight">residencial</span>, <span class="highlight">comercial</span> ao <span class="highlight">condomínio clube</span>, 
+                a LM Administradora é especialista em administrar e gerir condomínios com <span class="highlight">eficiência</span> e 
+                <span class="highlight">inovação tecnológica</span>. Otimizamos e gerenciamos a rotina condominial oferecendo serviços de 
+                <span class="highlight">gestão administrativa, financeira, tributária, jurídica</span> e <span class="highlight">síndicos profissionais</span> aos condomínios.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Filosofia da Empresa -->
+    <section id="filosofia" class="filosofia-section fade-in">
+        <div class="container">
+            <h2>O que nos define</h2>
+            <div class="missao-visao-valores">
+                <div class="card">
+                    <h3>Nossa Missão</h3>
+                    <p>Oferecer <span class="highlight">gestão condominial eficiente</span> com tecnologia de ponta e atendimento personalizado.</p>
                 </div>
-                <div class="team-member">
-                    <img src="images/membro2.jpg" alt="Maria Souza">
-                    <h3>Maria Souza</h3>
-                    <span>Financeiro</span>
-                    <p>Responsável por manter a saúde financeira de cada condomínio administrado.</p>
+                <div class="card">
+                    <h3>Nossa Visão</h3>
+                    <p>Ser referência em <span class="highlight">gestão de condomínios</span>, reconhecida por inovação, transparência e qualidade.</p>
                 </div>
-                <div class="team-member">
-                    <img src="images/membro3.jpg" alt="Carlos Pereira">
-                    <h3>Carlos Pereira</h3>
-                    <span>Suporte</span>
-                    <p>Garantindo atendimento ágil e eficiente para todos os clientes.</p>
+                <div class="card">
+                    <h3>Nossos Valores</h3>
+                    <ul>
+                        <li><span class="highlight">Transparência:</span> Mantemos os clientes informados em todas as etapas.</li>
+                        <li><span class="highlight">Inovação:</span> Buscamos novas tecnologias para otimizar processos.</li>
+                        <li><span class="highlight">Comprometimento:</span> Superamos as expectativas dos clientes.</li>
+                        <li><span class="highlight">Ética:</span> Atuamos com responsabilidade e integridade.</li>
+                        <li><span class="highlight">Colaboração:</span> Valorizamos o trabalho em equipe.</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="text-center" style="margin-top: 20px;">
-                <a href="equipe.html" class="btn">Veja Todos</a>
             </div>
         </div>
     </section>
 
-    <!-- Seção Serviços resumidos -->
-    <section id="servicos" class="section">
-        <div class="container fade-in">
-            <h2>Nossos Serviços</h2>
-            <p class="subtitle">Soluções completas para uma gestão de condomínio eficiente.</p>
-            <div class="services">
-                <div class="service-card">
-                    <div class="icon_service">🏢</div>
-                    <h3>Administração Geral</h3>
-                    <p>Gestão completa de condomínios com transparência e organização.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon_service">📊</div>
-                    <h3>Financeiro</h3>
-                    <p>Controle de contas, rateios e planejamento orçamentário.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon_service">🔧</div>
-                    <h3>Manutenção</h3>
-                    <p>Gerenciamento de serviços e fornecedores para seu condomínio.</p>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 20px;">
-                <a href="servicos.html" class="btn">Veja Todos</a>
-            </div>
+    <!-- Seção Call to Action -->
+    <section class="cta-section fade-in">
+        <div class="cta-container">
+            <h2>Quer <span class="highlight">melhorar a gestão</span> do seu condomínio?</h2>
+            <p>Descubra como nossos serviços podem otimizar a administração do seu condomínio, garantindo eficiência e transparência.</p>
+            <a href="servicos.html" class="btn-cta">Saiba Mais</a>
         </div>
     </section>
 
-    <!-- Footer original -->
-    <footer>
-        <div class="footer-container fade-in">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="CondoAdmin Logo" class="footer-logo-img">
-                <h2 class="sr-only">CondoAdmin</h2>
-                <p>Gestão eficiente e transparente para seu condomínio.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="contatos.html">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <address>
-                    <h3>Contato</h3>
-                    <p>Email: contato@condoadmin.com</p>
-                    <p>Telefone: (11) 1234-5678</p>
-                    <p>Endereço: Av. Paulista, 1000 - São Paulo/SP</p>
-                </address>
-            </div>
-            <div class="footer-social">
-                <h3>Siga-nos</h3>
-                <a href="#" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook" class="icon"></a>
-                <a href="#" target="_blank"><img src="images/icons/instagram.svg" alt="Instagram" class="icon"></a>
-                <a href="#" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn" class="icon"></a>
-            </div>
+<!-- Footer -->
+<footer class="footer-section fade-in">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="images/Logo Leonardo Muniz Condominios.png" alt="LM Administradora Logo" class="footer-logo-img">
+            <p>Gestão eficiente e transparente para seu condomínio.</p>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 CondoAdmin. Todos os direitos reservados.</p>
+
+        <div class="footer-links">
+            <h3>Links Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="footer-contact">
+            <h3>Contato</h3>
+            <p>Email: contato@lmadministradora.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+            <p>Endereço: Av. Paulista, 1000 - São Paulo/SP</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Siga-nos</h3>
+            <a href="#" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook" class="icon"></a>
+            <a href="#" target="_blank"><img src="images/icons/instagram.svg" alt="Instagram" class="icon"></a>
+            <a href="#" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn" class="icon"></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 LM Administradora. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
 
     <script src="js/main.js"></script>
 </body>

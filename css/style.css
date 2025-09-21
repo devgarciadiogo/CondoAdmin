@@ -38,12 +38,13 @@ body {
 /* HEADER / NAVBAR         */
 /* ======================= */
 header {
-    background-color: #004466;
+    background-color: #3B5756;
     padding: 15px 20px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-container {
@@ -55,17 +56,18 @@ header {
 }
 
 .logo img {
-    height: 65px;
+    height: 100px;
 }
 
 .navbar .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
+    font-size: 17.5px;
 }
 
 .navbar .nav-links li a {
-    color: #fff;
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -75,7 +77,7 @@ header {
 
 .navbar .nav-links li a.active,
 .navbar .nav-links li a:hover {
-    color: #00cc99;
+    color: #15b78f;
 }
 
 .navbar .nav-links li a::after {
@@ -85,7 +87,7 @@ header {
     bottom: 0;
     width: 0%;
     height: 2px;
-    background: #00cc99;
+    background: #15b78f;
     transition: width 0.3s ease;
 }
 
@@ -141,13 +143,28 @@ header {
 /* ======================= */
 .hero {
     position: relative;
-    height: 70vh; 
-    background: url("../images/condominio.jpg") no-repeat center center/cover;
+    height: 75vh; /* ligeiramente maior para impacto */
+    overflow: hidden; /* esconde qualquer excesso */
+    background-color: #000; /* ou mesma cor do overlay */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
 }
 
 .hero-overlay {
@@ -156,183 +173,150 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.55); /* overlay mais escuro para contraste */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 900px;
     padding: 20px;
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #04cd9a; /* destaque moderno */
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: 500;
 }
 
 .hero-content .btn {
     display: inline-block;
-    padding: 12px 24px;
-    background: #007BFF;
+    padding: 14px 28px;
+    background: #009973; /* cor principal do site */
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .hero-content .btn:hover {
-    background: #0056b3;
+    background: #017d5e;
+    transform: translateY(-3px);
+}
+
+/* Animação suave */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ======================= */
-/* SOBRE (RESUMIDO)        */
+/* SEÇÃO DE APRESENTAÇÃO DA EMPRESA */
 /* ======================= */
-.about-section {
-    background-color: #e6f2ff;
-    padding: 60px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
 
-.about-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-text h2 {
-    color: #004466;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    border-left: 5px solid #00cc99;
-    padding-left: 10px;
-}
-
-.about-text p {
-    color: #555;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-image img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-}
-
-/* ======================= */
-/* EQUIPE (RESUMIDA)       */
-/* ======================= */
-.team {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    width: 100%;
-    margin-top: 25px;
-    justify-items: center;
-}
-
-.team-member {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 20px;
+.presentation-section {
+    margin: 0;
+    padding: 80px 20px;
+    background-color: #3B5756; /* mesmo verde escuro da navbar */
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+.presentation-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    line-height: 1.8;
 }
 
-.team-member img {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 12px;
-    border: 4px solid #004466;
-}
-
-.team-member h3 {
-    color: #004466;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-.team-member span {
-    display: block;
-    color: #00cc99;
-    margin-bottom: 8px;
+.presentation-section .highlight {
+    color: #00cc99; /* verde vibrante para destacar palavras importantes */
     font-weight: 600;
 }
 
-.team-member p {
-    color: #555;
-    font-size: 0.9rem;
-}
-
 /* ======================= */
-/* SERVIÇOS (RESUMIDOS)    */
 /* ======================= */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    width: 100%;
-    margin-top: 25px;
-    justify-items: center;
-}
-
-.service-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
+/* SEÇÃO FILOSOFIA DA EMPRESA */
+/* ======================= */
+.filosofia-section {
+    margin: 0;
+    padding: 60px 20px; /* menos padding para não ficar gigante */
+    background-color: #f5f5f5; /* fundo neutro */
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-6px);
+.filosofia-section h2 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #15b78f; /* verde identidade */
+}
+
+.filosofia-section .highlight {
+    color: #00cc99; /* verde vibrante para destaques */
+    font-weight: 600;
+}
+
+.missao-visao-valores {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.missao-visao-valores .card {
+    background: #fff;
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px; /* menor largura máxima */
+    padding: 20px; /* menos padding vertical */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.missao-visao-valores .card:hover {
+    transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.service-card .icon_service {
-    font-size: 2rem;
-    margin-bottom: 12px;
-    color: #00cc99;
-}
-
-.service-card h3 {
+.missao-visao-valores h3 {
+    color: #15b78f; /* verde para título do card */
+    margin-bottom: 10px;
     font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #004466;
 }
 
-.service-card p {
+.missao-visao-valores p,
+.missao-visao-valores ul {
+    color: #555; /* cinza neutro para texto */
     font-size: 0.9rem;
-    color: #555;
+    line-height: 1.4; /* mais compacto */
+    list-style: none;
+}
+
+.missao-visao-valores ul li {
+    margin-bottom: 5px;
 }
 
 /* ======================= */
@@ -361,55 +345,107 @@ header {
 }
 
 /* ======================= */
-/* FOOTER                  */
+/* CALL TO ACTION - HOME PAGE */
 /* ======================= */
-footer {
-    background-color: #004466;
+.cta-section {
+    background-color: #f5f5f5; /* mesmo verde escuro do hero e navbar */
+    padding: 80px 20px;
+    text-align: center;
+    color: #00cc99;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.cta-section h2 .highlight {
+    color: #00cc99; /* verde vibrante para destacar */
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.btn-cta {
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    background-color: #00cc99;
+    border-radius: 8px;
     color: #fff;
-    padding: 40px 20px 15px 20px;
-    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #009973;
+    transform: translateY(-3px);
+}
+/* ======================= */
+/* FOOTER - HOME PAGE       */
+/* ======================= */
+.footer-section {
+    background-color: #3B5756; /* verde escuro consistente */
+    color: #fff;
+    padding: 60px 20px 20px 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-    margin-bottom: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
 }
 
 .footer-logo-img {
-    width: 140px;
+    width: 160px;
     height: auto;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .footer-logo p {
     color: #ccc;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .footer-links h3,
 .footer-contact h3,
 .footer-social h3 {
-    margin-bottom: 8px;
-    color: #00cc99;
+    margin-bottom: 12px;
+    color: #00cc99; /* destaque verde vibrante */
+    font-weight: 600;
 }
 
 .footer-links ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-links ul li {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .footer-links ul li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 0.95rem;
 }
 
 .footer-links ul li a:hover {
@@ -419,33 +455,33 @@ footer {
 .footer-contact p {
     margin-bottom: 6px;
     color: #ccc;
+    font-size: 0.95rem;
 }
 
 .footer-social a {
-    margin-right: 10px;
-    color: #fff;
-    transition: color 0.3s;
+    margin-right: 12px;
+    display: inline-block;
 }
 
-.icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 6px;
-    vertical-align: middle;
+.footer-social .icon {
+    width: 26px;
+    height: 26px;
     transition: transform 0.3s ease;
 }
 
-.icon:hover {
-    transform: scale(1.15);
+.footer-social .icon:hover {
+    transform: scale(1.2);
 }
 
 .footer-bottom {
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 12px;
+    padding-top: 15px;
     color: #ccc;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
+
+
 /* ======================= */
 /* RESPONSIVIDADE COMPLETA  */
 /* ======================= */
@@ -509,24 +545,52 @@ footer {
     .navbar .nav-links {
         display: none;
         flex-direction: column;
-        background-color: rgba(0, 68, 102, 0.95);
         position: absolute;
-        top: 70px;
-        right: 20px;
-        width: 70%;
-        padding: 15px;
-        border-radius: 8px;
+        top: 100%; /* menu exatamente abaixo da navbar */
+        left: 0;
+        width: 100%;
+        padding: 2rem 1rem;
+        gap: 1rem;
+        background-color: rgba(59, 87, 86, 0.97); /* mesma cor da navbar, leve transparência */
+        backdrop-filter: blur(4px); /* efeito vidro fosco */
         z-index: 9999;
+        border-radius: 0; /* remove arredondado */
     }
 
     .navbar .nav-links.show {
         display: flex;
     }
 
-    .menu-toggle {
-        display: flex;
+    .navbar .nav-links.show a {
+        color: #fff;
+        text-align: center;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s, color 0.3s;
+        border-radius: 0;
+    }
+    /* Hover e active */
+    .navbar .nav-links a:hover,
+    .navbar .nav-links a.active {
+        background-color: rgba(0, 204, 153, 0.2); /* efeito hover leve */
+        color: #00cc99; /* destaque */
     }
 
+    /* Toggle do menu */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+    }
     /* Hero */
     .hero {
         height: 50vh;
