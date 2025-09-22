@@ -9,11 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- Header / Navbar -->
     <header>
-        <div class="navbar-container ">
+        <div class="navbar-container">
             <a href="index.html" class="logo">
                 <img src="images/Logo Leonardo Muniz Condominios.png" alt="Leonardo Muniz Condominios Logo">
             </a>
@@ -21,7 +24,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="contato.html" id="contato-link">Contato</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
@@ -34,21 +37,10 @@
 
     <!-- Hero / Banner Principal -->
     <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="videos/Video Hero LM Admin.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos.
-    </video>
-    <script>
-        const video = document.getElementById('heroVideo');
-        
-        video.addEventListener('timeupdate', () => {
-            // reinicia 0.2s antes do final
-            if(video.currentTime >= video.duration - 0.2){
-            video.currentTime = 0;
-            video.play();
-            }
-        });
-    </script>
+        <video id="heroVideo" autoplay muted loop playsinline class="hero-video">
+            <source src="videos/Video Hero LM Admin.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Gestão de condomínios com excelência</h1>
@@ -58,8 +50,8 @@
     </section>
 
     <!-- Seção de Apresentação da Empresa -->
-    <section id="apresentacao" class="presentation-section ">
-        <div class="container fade-in">
+    <section id="apresentacao" class="presentation-section fade-in">
+        <div class="container">
             <p>
                 A <span class="highlight">LM Administradora</span> oferece <span class="highlight">soluções completas</span> em gestão condominial. 
                 Do <span class="highlight">residencial</span>, <span class="highlight">comercial</span> ao <span class="highlight">condomínio clube</span>, 
@@ -70,79 +62,88 @@
         </div>
     </section>
 
-    <!-- Seção Filosofia da Empresa -->
-    <section id="filosofia" class="filosofia-section fade-in">
-        <div class="container">
-            <h2>O que nos define</h2>
-            <div class="missao-visao-valores">
-                <div class="card">
-                    <h3>Nossa Missão</h3>
-                    <p>Oferecer <span class="highlight">gestão condominial eficiente</span> com tecnologia de ponta e atendimento personalizado.</p>
-                </div>
-                <div class="card">
-                    <h3>Nossa Visão</h3>
-                    <p>Ser referência em <span class="highlight">gestão de condomínios</span>, reconhecida por inovação, transparência e qualidade.</p>
-                </div>
-                <div class="card">
-                    <h3>Nossos Valores</h3>
-                    <ul>
-                        <li><span class="highlight">Transparência:</span> Mantemos os clientes informados em todas as etapas.</li>
-                        <li><span class="highlight">Inovação:</span> Buscamos novas tecnologias para otimizar processos.</li>
-                        <li><span class="highlight">Comprometimento:</span> Superamos as expectativas dos clientes.</li>
-                        <li><span class="highlight">Ética:</span> Atuamos com responsabilidade e integridade.</li>
-                        <li><span class="highlight">Colaboração:</span> Valorizamos o trabalho em equipe.</li>
-                    </ul>
-                </div>
+<!-- Seção Filosofia da Empresa -->
+<!-- Seção Filosofia da Empresa -->
+<section id="filosofia" class="filosofia-section fade-in">
+    <div class="container">
+        <h2>O que nos define</h2>
+        <div class="missao-visao-valores">
+
+            <div class="card">
+                <h3>Nossa Missão</h3>
+                <p>Oferecer <span class="highlight">gestão condominial eficiente</span> com tecnologia de ponta e atendimento personalizado.</p>
             </div>
+
+            <div class="card">
+                <h3>Nossa Visão</h3>
+                <p>Ser referência em <span class="highlight">gestão de condomínios</span>, reconhecida por inovação, transparência e qualidade.</p>
+            </div>
+
+            <div class="card">
+                <h3>Nossos Valores</h3>
+                <ul>
+                    <li><span class="highlight">Transparência:</span> Mantemos os clientes informados em todas as etapas.</li>
+                    <li><span class="highlight">Inovação:</span> Buscamos novas tecnologias para otimizar processos.</li>
+                    <li><span class="highlight">Comprometimento:</span> Superamos as expectativas dos clientes.</li>
+                    <li><span class="highlight">Ética:</span> Atuamos com responsabilidade e integridade.</li>
+                    <li><span class="highlight">Colaboração:</span> Valorizamos o trabalho em equipe.</li>
+                </ul>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <!-- Seção Call to Action -->
     <section class="cta-section fade-in">
         <div class="cta-container">
             <h2>Quer <span class="highlight">melhorar a gestão</span> do seu condomínio?</h2>
             <p>Descubra como nossos serviços podem otimizar a administração do seu condomínio, garantindo eficiência e transparência.</p>
-            <a href="servicos.html" class="btn-cta">Saiba Mais</a>
+            <a href="servicos.html" class="btn">Saiba Mais</a>
         </div>
     </section>
 
-<!-- Footer -->
-<footer class="footer-section fade-in">
-    <div class="footer-container">
-        <div class="footer-logo">
-            <img src="images/Logo Leonardo Muniz Condominios.png" alt="LM Administradora Logo" class="footer-logo-img">
-            <p>Gestão eficiente e transparente para seu condomínio.</p>
+    <!-- Footer -->
+    <footer class="footer-section fade-in">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/Logo Leonardo Muniz Condominios.png" alt="LM Administradora Logo" class="footer-logo-img">
+                <p>Gestão eficiente e transparente para seu condomínio.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p>Email: contato@lmadministradora.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Endereço: Av. Paulista, 1000 - São Paulo/SP</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <a href="#" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook" class="icon"></a>
+                <a href="#" target="_blank"><img src="images/icons/instagram.svg" alt="Instagram" class="icon"></a>
+                <a href="#" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn" class="icon"></a>
+            </div>
         </div>
 
-        <div class="footer-links">
-            <h3>Links Rápidos</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>© 2025 LM Administradora. Todos os direitos reservados.</p>
         </div>
+    </footer>
 
-        <div class="footer-contact">
-            <h3>Contato</h3>
-            <p>Email: contato@lmadministradora.com</p>
-            <p>Telefone: (11) 1234-5678</p>
-            <p>Endereço: Av. Paulista, 1000 - São Paulo/SP</p>
-        </div>
-
-        <div class="footer-social">
-            <h3>Siga-nos</h3>
-            <a href="#" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook" class="icon"></a>
-            <a href="#" target="_blank"><img src="images/icons/instagram.svg" alt="Instagram" class="icon"></a>
-            <a href="#" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn" class="icon"></a>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2025 LM Administradora. Todos os direitos reservados.</p>
-    </div>
-</footer>
-
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
 
     <script src="js/main.js"></script>
 </body>
