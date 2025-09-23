@@ -17,27 +17,26 @@ if (video) {
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".navbar .nav-links");
 
-// Define atributos ARIA iniciais
-menuToggle.setAttribute("aria-expanded", "false");
-menuToggle.setAttribute("aria-controls", "nav-links");
+if (menuToggle && navLinks) {
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-controls", "nav-links");
 
-// Toggle menu com animação do hamburger -> X
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("show");
-  menuToggle.classList.toggle("open"); // anima o X
-  menuToggle.setAttribute("aria-expanded", isOpen);
-});
-
-// Fecha o menu ao clicar em algum link (mobile)
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    if (navLinks.classList.contains("show")) {
-      navLinks.classList.remove("show");
-      menuToggle.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("show");
+    menuToggle.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
   });
-});
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (navLinks.classList.contains("show")) {
+        navLinks.classList.remove("show");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+}
 
 // =======================
 // FADE-IN COM INTERSECTION OBSERVER
@@ -49,7 +48,7 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // anima apenas uma vez
+        observer.unobserve(entry.target);
       }
     });
   },
@@ -96,11 +95,79 @@ window.addEventListener("scroll", () => {
 // =======================
 // BOTÃO VOLTAR AO TOPO
 // =======================
-const backToTop = document.getElementById("back-to-top"); // já existe no HTML
+const backToTop = document.getElementById("back-to-top");
 window.addEventListener("scroll", () => {
-  backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+  if (backToTop) {
+    backToTop.style.display = window.scrollY > 300 ? "flex" : "none";
+  }
 });
-backToTop.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (backToTop) {
+  backToTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// =======================
+// CARROSSEL DE SERVIÇOS
+// =======================
+const carrossel = document.querySelector(".carrossel-servicos");
+if (carrossel) {
+  const wrapper = carrossel.querySelector(".cards-wrapper");
+  const prevBtn = carrossel.querySelector(".carrossel-btn.prev");
+  const nextBtn = carrossel.querySelector(".carrossel-btn.next");
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // Drag com mouse
+  wrapper.addEventListener("mousedown", (e) => {
+    isDown = true;
+    wrapper.classList.add("active");
+    startX = e.pageX - wrapper.offsetLeft;
+    scrollLeft = wrapper.scrollLeft;
+  });
+  wrapper.addEventListener("mouseleave", () => {
+    isDown = false;
+    wrapper.classList.remove("active");
+  });
+  wrapper.addEventListener("mouseup", () => {
+    isDown = false;
+    wrapper.classList.remove("active");
+  });
+  wrapper.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - wrapper.offsetLeft;
+    const walk = (x - startX) * 2;
+    wrapper.scrollLeft = scrollLeft - walk;
+  });
+
+  // Botões de navegação
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      wrapper.scrollBy({ left: wrapper.offsetWidth, behavior: "smooth" });
+    });
+  }
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      wrapper.scrollBy({ left: -wrapper.offsetWidth, behavior: "smooth" });
+    });
+  }
+
+  // Touch support
+  let touchStartX = 0;
+  let touchScrollLeft = 0;
+
+  wrapper.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].pageX;
+    touchScrollLeft = wrapper.scrollLeft;
+  });
+
+  wrapper.addEventListener("touchmove", (e) => {
+    const touchX = e.touches[0].pageX;
+    const walk = (touchX - touchStartX) * 2;
+    wrapper.scrollLeft = touchScrollLeft - walk;
+  });
+}
