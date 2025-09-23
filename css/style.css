@@ -394,7 +394,7 @@ header.scrolled {
 }
 
 .footer-logo p {
-    color: #ccc;
+    color: #eee;
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -428,7 +428,7 @@ header.scrolled {
 
 .footer-contact p {
     margin-bottom: 6px;
-    color: #ccc;
+    color: #eee;
     font-size: 0.95rem;
 }
 
@@ -451,7 +451,7 @@ header.scrolled {
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.2);
     padding-top: 15px;
-    color: #ccc;
+    color: #eee;
     font-size: 0.85rem;
 }
 
@@ -479,6 +479,17 @@ header.scrolled {
 .back-to-top:hover {
     transform: translateY(-2px);
     background-color: #009973;
+}
+
+/* ======================= */
+/* ACESSIBILIDADE LINKS    */
+/* ======================= */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #00cc99; /* cor de destaque */
+    outline-offset: 3px;
 }
 
 /* ======================= */
