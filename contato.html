@@ -26,106 +26,156 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contato.css">
 </head>
 <body>
+    <!-- Header / Navbar -->
+    <header>
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo Leonardo Muniz Condominios.png" alt="Leonardo Muniz Condominios Logo">
+            </a>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html" class="active" id="contato-link">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" aria-label="Abrir menu" aria-controls="navbar" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
-    <!-- Header -->
-  <header>
-    <div class="navbar-container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="CondoAdmin Logo">
-      </a>
-      <nav class="navbar">
-        <ul class="nav-links">
-          <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="contato.html" class="active">Contato</a></li>
-        </ul>
-      </nav>
-      <div class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </header>
+    <!-- HERO CONTATO           -->
+    <section class="hero-contato">
+        <div class="hero-overlay">
+            <div class="hero-content container">
+                <h1>Fale Conosco</h1>
+                <p>Estamos prontos para atender você com eficiência e transparência. <br>Entre em contato e saiba mais sobre nossos serviços.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- HERO / INTRODUÇÃO -->
-  <section class="hero-contact">
-    <div class="container">
-      <h1>Entre em Contato</h1>
-      <p>Tem dúvidas ou deseja contratar nossos serviços? Preencha o formulário abaixo ou fale direto com a nossa equipe pelo WhatsApp!</p>
-    </div>
-  </section>
 
-  <!-- FORMULÁRIO DE CONTATO -->
-  <section class="section contact-section fade-in">
-  <div class="container">
-    <div class="contact-wrapper">
-      <!-- Formulário -->
-      <div class="contact-card">
-        <h2>Entre em Contato</h2>
-        <p>Tem dúvidas ou deseja contratar nossos serviços? Fale conosco!</p>
-        <form class="contact-form">
-          <div class="form-group">
-            <label for="name">Seu Nome</label>
-            <input type="text" id="name" placeholder="Seu Nome" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Seu Email</label>
-            <input type="email" id="email" placeholder="Seu Email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Sua Mensagem</label>
-            <textarea id="message" placeholder="Sua Mensagem" rows="5" required></textarea>
-          </div>
-          <button type="submit">Enviar Mensagem</button>
-        </form>
-      </div>
+    <!-- CONTATO FORM + REDES -->
 
-      <!-- Botão WhatsApp -->
-      <div class="whatsapp-contact fade-in">
-        <a href="https://wa.me/5511999999999" target="_blank">
-          <img src="images/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
-          Fale Conosco pelo WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="contato-section container fade-in">
+        <div class="contato-wrapper">
 
-  </section>
+            <!-- LADO ESQUERDO: REDES SOCIAIS + INFO -->
+            <div class="contato-right">
+                <div class="social-buttons">
+                    <a href="#" class="btn-social instagram" aria-label="Instagram LM Administradora">
+                        <img src="images/icons/instagram.svg" alt="Instagram">Instagram
+                    </a>
+                    <a href="#" class="btn-social facebook" aria-label="Facebook LM Administradora">
+                        <img src="images/icons/facebook.svg" alt="Facebook">Facebook
+                    </a>
+                    <a href="#" class="btn-social linkedin" aria-label="LinkedIn LM Administradora">
+                        <img src="images/icons/linkedin.svg" alt="LinkedIn">LinkedIn
+                    </a>
+                    <a href="#" class="btn-social whatsapp" aria-label="WhatsApp LM Administradora">
+                        <img src="images/icons/whatsapp.svg" alt="WhatsApp">WhatsApp
+                    </a>
+                </div>
 
-      <footer>
-        <div class="footer-container fade-in">
+                <div class="contato-info">
+                    <p><strong>Endereço:</strong> Rua Noronha Torrezão 24, sala 1715 - Condomínio Premier Offices - Niterói, RJ</p>
+                    <p><strong>Horário de Funcionamento:</strong> Segunda a Sexta: 08:00 - 18:00</p>
+                    <p><strong>Telefone/WhatsApp:</strong> (21) 96943-0810</p>
+                    <p><strong>Email:</strong> atendimento@lmcondominios.com.br</p>
+                </div>
+            </div>
+
+            <!-- LADO DIREITO: FORMULÁRIO -->
+            <div class="contato-left">
+                <form class="form-contato" action="#" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn enviar-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-container">
             <div class="footer-logo">
-                <img src="images/logo.png" alt="CondoAdmin Logo" class="footer-logo-img">
-                <h2 class="sr-only">CondoAdmin</h2>
+                <img src="images/Logo Leonardo Muniz Condominios.png" alt="LM Administradora Logo" class="footer-logo-img">
                 <p>Gestão eficiente e transparente para seu condomínio.</p>
             </div>
+
             <div class="footer-links">
                 <h3>Links Rápidos</h3>
-                <ul>                                     
+                <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
+
             <div class="footer-contact">
-                <address>
-                    <h3>Contato</h3>
-                    <p>Email: contato@condoadmin.com</p>
-                    <p>Telefone: (11) 1234-5678</p>
-                    <p>Endereço: Av. Paulista, 1000 - São Paulo/SP</p>
-                </address>
+                <h3>Contato</h3>
+                
+                <div class="contact-item">
+                    <span class="label">Email:</span>
+                    <span class="info">atendimento@lmcondominios.com.br</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="label">Tel/WhatsApp:</span>
+                    <span class="info">(21) 96943 0810</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="label">Endereço:</span>
+                    <span class="info">
+                        Rua Noronha Torrezão 24, sala 1715 - Condomínio Premier Offices - Niterói, RJ
+                    </span>
+                </div>
             </div>
             <div class="footer-social">
                 <h3>Siga-nos</h3>
-                <a href="#" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook" class="icon"></a>
-                <a href="#" target="_blank"><img src="images/icons/instagram.svg" alt="Instagram" class="icon"></a>
-                <a href="#" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn" class="icon"></a>
+                <a href="#" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook da LM Administradora" class="icon"></a>
+                <a href="#" target="_blank"><img src="images/icons/instagram.svg" alt="Instagram da LM Administradora" class="icon"></a>
+                <a href="#" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn da LM Administradora" class="icon"></a>
             </div>
-        </div>
+          </div>
+
         <div class="footer-bottom">
-            <p>© 2025 CondoAdmin. Todos os direitos reservados.</p>
+            <p>© 2025 LM Administradora | CNPJ: 62.451.776/0001-85 | Todos os direitos reservados.</p>
         </div>
-    </footer>
+      </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" id="back-to-top" class="back-to-top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+    </a>
 <script src="js/main.js"></script>
 </body>
 </html>

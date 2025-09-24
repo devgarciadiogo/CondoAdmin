@@ -71,14 +71,19 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // =======================
-// HERO PARALLAX
+// HERO PARALLAX (SOMENTE HOMEPAGE)
 // =======================
-const heroContent = document.querySelector(".hero-content");
-window.addEventListener("scroll", () => {
+if (
+  window.location.pathname === "/index.html" ||
+  window.location.pathname === "/"
+) {
+  const heroContent = document.querySelector(".hero-content");
   if (heroContent) {
-    heroContent.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+    window.addEventListener("scroll", () => {
+      heroContent.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+    });
   }
-});
+}
 
 // =======================
 // STICKY HEADER SHADOW
