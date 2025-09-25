@@ -627,17 +627,17 @@ textarea:focus {
 
     /* Botões sociais */
     .btn-social { 
-        flex: 0 0 48%;
+        width: 100%;
+        max-width: 180px;
         font-size: 0.95rem; 
         padding: 14px 16px; 
         text-align: center;
         justify-content: center; 
     }
     .social-buttons { 
-        display: flex;
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        justify-content: center; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center; 
         gap: 12px; 
     }
 
