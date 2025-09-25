@@ -262,14 +262,15 @@ header.scrolled {
 
 .presentation-section .container {
     max-width: 900px;
-    font-size: 1.3rem;
-    line-height: 1.8;
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    line-height: 1.5;
 }
 
 .presentation-section .highlight {
     color: #00cc99;
     font-weight: 600;
 }
+
 
 /* ======================= */
 /* FILOSOFIA DA EMPRESA    */
