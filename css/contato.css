@@ -630,6 +630,7 @@ textarea:focus {
         flex: 0 0 48%;
         font-size: 0.95rem; 
         padding: 14px 16px; 
+        text-align: center;
         justify-content: center; 
     }
     .social-buttons { 
