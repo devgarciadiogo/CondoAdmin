@@ -237,7 +237,6 @@ header.scrolled {
   margin: 0 auto 40px auto;
   color: #555;
 }
-
 /* ======================= */
 /* CARROSSEL DE SERVIÇOS   */
 /* ======================= */
@@ -251,13 +250,12 @@ header.scrolled {
 
 .cards-wrapper {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  overflow-x: hidden; /* bloqueia scroll manual */
+  scroll-behavior: auto; /* evita smooth scroll nativo */
   gap: 20px;
   padding: 10px 20px;
   scrollbar-width: none; /* Firefox */
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* habilita momentum no iOS */
 }
 
 .cards-wrapper::-webkit-scrollbar {
@@ -344,6 +342,7 @@ header.scrolled {
 .carrossel-btn.next {
   right: -20px;
 }
+
 
 /* ======================= */
 /* UCONDO - DIFERENCIAL    */

@@ -114,7 +114,7 @@ if (backToTop) {
 }
 
 // =======================
-// CARROSSEL DINÂMICO INFINITO DESKTOP + MOBILE
+// CARROSSEL DINÂMICO DESKTOP + MOBILE (somente setas)
 // =======================
 const carrossel = document.querySelector(".carrossel-servicos");
 if (carrossel) {
@@ -144,8 +144,7 @@ if (carrossel) {
 
   render();
 
-  const cardWidth = wrapper.querySelector(".card").offsetWidth + 20;
-
+  // Atualizar índice ao clicar nas setas
   function updateIndex(direction) {
     if (direction === "next")
       startIndex = (startIndex + 1) % allCardsData.length;
@@ -153,40 +152,6 @@ if (carrossel) {
       startIndex = (startIndex - 1 + allCardsData.length) % allCardsData.length;
     render();
   }
-
-  // =======================
-  // Drag Desktop
-  // =======================
-  let isDown = false,
-    startX,
-    scrollStart;
-
-  wrapper.addEventListener("mousedown", (e) => {
-    isDown = true;
-    wrapper.classList.add("active");
-    startX = e.pageX;
-    scrollStart = wrapper.scrollLeft;
-  });
-
-  wrapper.addEventListener("mouseup", () => {
-    isDown = false;
-    wrapper.classList.remove("active");
-  });
-
-  wrapper.addEventListener("mouseleave", () => {
-    isDown = false;
-    wrapper.classList.remove("active");
-  });
-
-  wrapper.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    const delta = (startX - e.pageX) * 0.5;
-    wrapper.scrollLeft = scrollStart + delta;
-
-    if (wrapper.scrollLeft <= 0) updateIndex("prev");
-    else if (wrapper.scrollLeft >= wrapper.scrollWidth - wrapper.offsetWidth)
-      updateIndex("next");
-  });
 
   // =======================
   // Botões Desktop + Mobile
