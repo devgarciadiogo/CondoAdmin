@@ -68,7 +68,7 @@ header.scrolled {
 }
 
 .logo img {
-    height: 140px;
+    height: 130px;
     display: block;
     object-fit: contain;
     transition: transform 0.3s ease;
