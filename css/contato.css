@@ -185,6 +185,18 @@ header.scrolled {
     text-align: center;
 }
 
+/* Barra de progresso de scroll */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;       /* altura da barra */
+  background-color: #00cc99; /* cor da barra */
+  width: 0%;
+  z-index: 2000;
+  transition: width 0.1s ease-out;
+}
+
 /* ======================= */
 /* HERO CONTATO            */
 /* ======================= */
@@ -488,6 +500,7 @@ textarea {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 15px;
+    padding-bottom: 30px;
     color: #eee;
     font-size: 0.85rem;
 }

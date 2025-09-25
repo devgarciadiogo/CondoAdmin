@@ -189,28 +189,21 @@ if (carrossel) {
   });
 
   // =======================
-  // Touch Mobile
-  // =======================
-  let touchStartX = 0,
-    touchScrollStart = 0;
-
-  wrapper.addEventListener("touchstart", (e) => {
-    touchStartX = e.touches[0].pageX;
-    touchScrollStart = wrapper.scrollLeft;
-  });
-
-  wrapper.addEventListener("touchmove", (e) => {
-    const delta = (touchStartX - e.touches[0].pageX) * 0.5;
-    wrapper.scrollLeft = touchScrollStart + delta;
-
-    if (wrapper.scrollLeft <= 0) updateIndex("prev");
-    else if (wrapper.scrollLeft >= wrapper.scrollWidth - wrapper.offsetWidth)
-      updateIndex("next");
-  });
-
-  // =======================
   // Botões Desktop + Mobile
   // =======================
   nextBtn.addEventListener("click", () => updateIndex("next"));
   prevBtn.addEventListener("click", () => updateIndex("prev"));
 }
+
+// Criar a barra de scroll dinamicamente
+const scrollIndicator = document.createElement("div");
+scrollIndicator.classList.add("scroll-indicator");
+document.body.appendChild(scrollIndicator);
+
+// Atualizar barra no scroll
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  scrollIndicator.style.width = scrollPercent + "%";
+});
