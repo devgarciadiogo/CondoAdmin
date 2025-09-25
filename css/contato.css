@@ -299,8 +299,13 @@ header.scrolled {
     line-height: 1.5;
 }
 
+
 .contato-info p strong {
     color: #15b78f;
+}
+
+.contato-info p .horario {
+    white-space: nowrap;
 }
 
 /* ====== LADO DIREITO: FORMULÁRIO ====== */
@@ -681,6 +686,7 @@ textarea:focus {
     .contato-left, .contato-right { 
         width: 100%; 
     }
+    
 
     .btn-social { 
         font-size: 0.9rem; 
