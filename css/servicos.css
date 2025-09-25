@@ -264,7 +264,6 @@ header.scrolled {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   scroll-snap-align: start;
   flex: 0 0 auto;
-  
 }
 
 .card:hover {
@@ -308,8 +307,26 @@ header.scrolled {
   z-index: 10;
 }
 
+.carrossel-servicos .carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #00cc99;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;           /* agora sempre visível */
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
 .carrossel-btn.prev {
-  left: -20px;
+  left: -35px;
 }
 
 .carrossel-btn.next {
@@ -696,8 +713,22 @@ textarea:focus {
     scroll-snap-align: start;
   }
 
+    .carrossel-btn.prev {
+    left: -18px; /* aproxima da tela */
+  }
+  .carrossel-btn.next {
+    right: -20px; /* aproxima da tela */
+  }
+
   /* Remove as setas no mobile */
   .carrossel-servicos .carrossel-btn { display: none; }
+
+  .carrossel-servicos .carrossel-btn {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
 
   /* Ucondo / Parceiras / CTA */
   .ucondo-section { padding: 50px 15px; }
@@ -729,7 +760,12 @@ textarea:focus {
   .card { min-width: 160px; max-width: 160px; padding: 10px; }
   .card h3 { font-size: 0.95rem; }
   .card p { font-size: 0.82rem; line-height: 1.05rem; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-
+    .carrossel-btn.prev {
+    left:-20px;
+  }
+  .carrossel-btn.next {
+    right: -20px;
+  }
   .ucondo-section { padding: 40px 12px; }
   .ucondo-section .section-title { font-size: 1.5rem; }
   .ucondo-section .section-description { font-size: 0.95rem; }
@@ -745,9 +781,14 @@ textarea:focus {
   .hero-servicos h1 { font-size: 1.3rem; }
   .hero-servicos p { font-size: 0.85rem; }
 
-  .card { min-width: 140px; max-width: 140px; padding: 8px; }
+  .card { min-width: 120px; max-width: 120px; padding: 8px; }
   .card h3 { font-size: 0.9rem; }
   .card p { font-size: 0.75rem; line-height: 1rem; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-
+    .carrossel-btn.prev {
+    left: 2px;
+  }
+  .carrossel-btn.next {
+    right: -2px;
+  }
   .btn { padding: 6px 14px; font-size: 0.85rem; }
 }

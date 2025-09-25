@@ -627,11 +627,13 @@ textarea:focus {
 
     /* Botões sociais */
     .btn-social { 
+        flex: 0 0 48%;
         font-size: 0.95rem; 
         padding: 14px 16px; 
         justify-content: center; 
     }
     .social-buttons { 
+        display: flex;
         flex-direction: row; 
         flex-wrap: wrap; 
         justify-content: center; 

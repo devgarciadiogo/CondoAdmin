@@ -114,7 +114,7 @@ if (backToTop) {
 }
 
 // =======================
-// CARROSSEL DINÂMICO INFINITO (DESKTOP + MOBILE)
+// CARROSSEL DINÂMICO INFINITO DESKTOP + MOBILE
 // =======================
 const carrossel = document.querySelector(".carrossel-servicos");
 if (carrossel) {
@@ -126,7 +126,7 @@ if (carrossel) {
     html: card.outerHTML,
   }));
 
-  const visibleCount = 4; // número de cards visíveis
+  const visibleCount = 4; // cards visíveis na tela
   const buffer = 2; // cards extras fora da tela
   let startIndex = 0;
 
@@ -180,11 +180,9 @@ if (carrossel) {
 
   wrapper.addEventListener("mousemove", (e) => {
     if (!isDown) return;
-    e.preventDefault();
     const delta = (startX - e.pageX) * 0.5;
     wrapper.scrollLeft = scrollStart + delta;
 
-    // Loop infinito
     if (wrapper.scrollLeft <= 0) updateIndex("prev");
     else if (wrapper.scrollLeft >= wrapper.scrollWidth - wrapper.offsetWidth)
       updateIndex("next");
@@ -211,7 +209,7 @@ if (carrossel) {
   });
 
   // =======================
-  // Botões Desktop
+  // Botões Desktop + Mobile
   // =======================
   nextBtn.addEventListener("click", () => updateIndex("next"));
   prevBtn.addEventListener("click", () => updateIndex("prev"));
