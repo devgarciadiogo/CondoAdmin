@@ -114,7 +114,7 @@ if (backToTop) {
 }
 
 // =======================
-// CARROSSEL DE SERVIÇOS
+// CARROSSEL DINÂMICO INFINITO (DESKTOP + MOBILE)
 // =======================
 const carrossel = document.querySelector(".carrossel-servicos");
 if (carrossel) {
@@ -122,57 +122,97 @@ if (carrossel) {
   const prevBtn = carrossel.querySelector(".carrossel-btn.prev");
   const nextBtn = carrossel.querySelector(".carrossel-btn.next");
 
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  const allCardsData = Array.from(wrapper.children).map((card) => ({
+    html: card.outerHTML,
+  }));
 
-  // Drag com mouse
+  const visibleCount = 4; // número de cards visíveis
+  const buffer = 2; // cards extras fora da tela
+  let startIndex = 0;
+
+  // Inicializa o carrossel virtual
+  function render() {
+    wrapper.innerHTML = "";
+    const totalToRender = visibleCount + buffer * 2;
+    for (let i = 0; i < totalToRender; i++) {
+      const index = (startIndex + i) % allCardsData.length;
+      wrapper.innerHTML += allCardsData[index].html;
+    }
+    wrapper.scrollLeft =
+      buffer * (wrapper.querySelector(".card").offsetWidth + 20);
+  }
+
+  render();
+
+  const cardWidth = wrapper.querySelector(".card").offsetWidth + 20;
+
+  function updateIndex(direction) {
+    if (direction === "next")
+      startIndex = (startIndex + 1) % allCardsData.length;
+    if (direction === "prev")
+      startIndex = (startIndex - 1 + allCardsData.length) % allCardsData.length;
+    render();
+  }
+
+  // =======================
+  // Drag Desktop
+  // =======================
+  let isDown = false,
+    startX,
+    scrollStart;
+
   wrapper.addEventListener("mousedown", (e) => {
     isDown = true;
     wrapper.classList.add("active");
-    startX = e.pageX - wrapper.offsetLeft;
-    scrollLeft = wrapper.scrollLeft;
+    startX = e.pageX;
+    scrollStart = wrapper.scrollLeft;
   });
-  wrapper.addEventListener("mouseleave", () => {
-    isDown = false;
-    wrapper.classList.remove("active");
-  });
+
   wrapper.addEventListener("mouseup", () => {
     isDown = false;
     wrapper.classList.remove("active");
   });
+
+  wrapper.addEventListener("mouseleave", () => {
+    isDown = false;
+    wrapper.classList.remove("active");
+  });
+
   wrapper.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - wrapper.offsetLeft;
-    const walk = (x - startX) * 2;
-    wrapper.scrollLeft = scrollLeft - walk;
+    const delta = (startX - e.pageX) * 0.5;
+    wrapper.scrollLeft = scrollStart + delta;
+
+    // Loop infinito
+    if (wrapper.scrollLeft <= 0) updateIndex("prev");
+    else if (wrapper.scrollLeft >= wrapper.scrollWidth - wrapper.offsetWidth)
+      updateIndex("next");
   });
 
-  // Botões de navegação
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      wrapper.scrollBy({ left: wrapper.offsetWidth, behavior: "smooth" });
-    });
-  }
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      wrapper.scrollBy({ left: -wrapper.offsetWidth, behavior: "smooth" });
-    });
-  }
-
-  // Touch support
-  let touchStartX = 0;
-  let touchScrollLeft = 0;
+  // =======================
+  // Touch Mobile
+  // =======================
+  let touchStartX = 0,
+    touchScrollStart = 0;
 
   wrapper.addEventListener("touchstart", (e) => {
     touchStartX = e.touches[0].pageX;
-    touchScrollLeft = wrapper.scrollLeft;
+    touchScrollStart = wrapper.scrollLeft;
   });
 
   wrapper.addEventListener("touchmove", (e) => {
-    const touchX = e.touches[0].pageX;
-    const walk = (touchX - touchStartX) * 2;
-    wrapper.scrollLeft = touchScrollLeft - walk;
+    const delta = (touchStartX - e.touches[0].pageX) * 0.5;
+    wrapper.scrollLeft = touchScrollStart + delta;
+
+    if (wrapper.scrollLeft <= 0) updateIndex("prev");
+    else if (wrapper.scrollLeft >= wrapper.scrollWidth - wrapper.offsetWidth)
+      updateIndex("next");
   });
+
+  // =======================
+  // Botões Desktop
+  // =======================
+  nextBtn.addEventListener("click", () => updateIndex("next"));
+  prevBtn.addEventListener("click", () => updateIndex("prev"));
 }

@@ -245,6 +245,7 @@ header.scrolled {
   padding: 10px 20px;
   scrollbar-width: none; /* Firefox */
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* habilita momentum no iOS */
 }
 
 .cards-wrapper::-webkit-scrollbar {
@@ -262,6 +263,8 @@ header.scrolled {
   flex-shrink: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   scroll-snap-align: start;
+  flex: 0 0 auto;
+  
 }
 
 .card:hover {
@@ -330,7 +333,7 @@ header.scrolled {
 }
 
 .ucondo-section .section-description {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   max-width: 750px;
   margin: 0 auto 50px auto;
   color: #fff;
@@ -451,8 +454,8 @@ header.scrolled {
 }
 
 .cta-section .cta-description {
-  font-size: 1.15rem;
-  max-width: 700px;
+  font-size: 1.3rem;
+  max-width: 750px;
   margin: 0 auto 35px auto;
   line-height: 1.6;
 }
