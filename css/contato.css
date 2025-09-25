@@ -245,7 +245,7 @@ header.scrolled {
 
 /* ====== LADO ESQUERDO ====== */
 .contato-left {
-    flex: 1 1 500px;
+    flex: 1 1 5000px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -305,15 +305,28 @@ header.scrolled {
 }
 
 /* Informações de contato */
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espaçamento uniforme entre os <p> */
+    max-width: 600px;
+}
+
+
 .contato-info p {
     font-size: 1rem;
     color: #555;
-    line-height: 1.5;
+    line-height: 1.6;
+    text-align: left;
+    word-break: break-word;   /* quebra palavras longas */
+    overflow-wrap: anywhere;  /* quebra caso seja necessário */
+    margin: 0; /* remove margem extra que pode desalinhar */
 }
 
 
 .contato-info p strong {
     color: #15b78f;
+    margin-right: 5px; /* afasta o texto do label */
 }
 
 .contato-info p .horario {
