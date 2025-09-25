@@ -527,12 +527,13 @@ textarea:focus {
     outline: 2px solid #00cc99; /* cor de destaque */
     outline-offset: 3px;
 }
+/* ======================= */
+/* RESPONSIVIDADE COMPLETA - TELA DE CONTATO */
+/* ======================= */
 
 /* ======================= */
-/* RESPONSIVIDADE CONTATO  */
+/* DESKTOP GRANDE / DEFAULT */
 /* ======================= */
-
-/* Desktop grande / default */
 .contato-section { 
     padding: 80px 20px; 
     gap: 50px; 
@@ -545,42 +546,34 @@ textarea:focus {
     gap: 50px;
     flex-wrap: wrap;
     justify-content: center;
-    flex-direction: row-reverse; /* Formulário à direita, info à esquerda */
+    flex-direction: row-reverse; /* Formulário à direita */
 }
 
-/* Large tablets / small desktop */
+/* ======================= */
+/* TABLET GRANDE / SMALL DESKTOP (992px) */
+/* ======================= */
 @media (max-width: 992px) {
-    .hero-contato { 
-        padding: 90px 20px; 
-    }
-    .hero-contato h1 { 
-        font-size: 2.2rem; 
-    }
-    .hero-contato p { 
-        font-size: 1.05rem; 
-    }
+    /* Hero */
+    .hero-contato { padding: 90px 20px; }
+    .hero-contato h1 { font-size: 2.2rem; line-height: 1.2; }
+    .hero-contato p { font-size: 1.05rem; line-height: 1.4; }
 
-    .contato-section { 
-        padding: 60px 20px; 
-        gap: 40px; 
-    }
-    .contato-left, .contato-right { 
-        flex: 1 1 400px; 
-    }
+    /* Contato */
+    .contato-section { padding: 60px 20px; gap: 40px; }
+    .contato-left, .contato-right { flex: 1 1 400px; }
 
-    .btn-social { 
-        font-size: 1rem; 
-        padding: 16px 16px; 
-    }
+    /* Botões sociais */
+    .btn-social { font-size: 1rem; padding: 16px 16px; }
 
-    .form-contato { 
-        padding: 25px 20px; 
-    }
+    /* Formulário */
+    .form-contato { padding: 25px 20px; }
 }
 
-/* Tablet / mobile médio */
+/* ======================= */
+/* TABLET / MOBILE MÉDIO (768px) */
+/* ======================= */
 @media (max-width: 768px) {
-    /* Navbar / Hamburger */
+    /* Navbar */
     .navbar .nav-links {
         display: none;
         flex-direction: column;
@@ -594,148 +587,70 @@ textarea:focus {
         backdrop-filter: blur(4px);
         z-index: 9999;
     }
+    .navbar .nav-links.show { display: flex; }
+    .menu-toggle { display: flex; }
 
-    .navbar .nav-links.show { 
-        display: flex; 
-    }
+    /* Hero */
+    .hero-contato { padding: 70px 15px; }
+    .hero-contato h1 { font-size: 1.8rem; line-height: 1.25; }
+    .hero-contato p { font-size: 1rem; line-height: 1.4; }
 
-    .menu-toggle { 
-        display: flex; 
-    }
-
-    /* Hero Contato */
-    .hero-contato { 
-        padding: 70px 15px; 
-    }
-    .hero-contato h1 { 
-        font-size: 1.8rem; 
-    }
-    .hero-contato p { 
-        font-size: 1rem; 
-    }
-
-    /* Seção Contato */
-    .contato-section { 
-        flex-direction: column; 
-        padding: 50px 15px; 
-        gap: 30px; 
-    }
-
-    /* Ordem dos elementos no mobile: formulário primeiro */
-    .contato-wrapper { 
-        flex-direction: column-reverse; 
-        gap: 30px; 
-    }
-    .contato-left, .contato-right { 
-        flex: 1 1 100%; 
-    }
+    /* Contato */
+    .contato-section { flex-direction: column; padding: 50px 15px; gap: 30px; }
+    .contato-wrapper { flex-direction: column-reverse; gap: 30px; } /* Form primeiro */
+    .contato-left, .contato-right { flex: 1 1 100%; }
 
     /* Botões sociais */
-    .btn-social { 
-        width: 100%;
-        max-width: 180px;
-        font-size: 0.95rem; 
-        padding: 14px 16px; 
-        text-align: center;
-        justify-content: center; 
-    }
-    .social-buttons { 
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center; 
-        gap: 12px; 
-    }
+    .btn-social { width: 100%; max-width: 180px; font-size: 0.95rem; padding: 14px 16px; text-align: center; justify-content: center; }
+    .social-buttons { display: grid; grid-template-columns: repeat(2, 1fr); justify-items: center; gap: 12px; }
 
     /* Formulário */
-    .form-contato { 
-        padding: 20px 15px; 
-    }
-    .form-group input, .form-group textarea { 
-        font-size: 0.9rem; 
-        padding: 8px 10px; 
-    }
-    .enviar-btn { 
-        font-size: 0.95rem; 
-        padding: 10px 20px; 
-    }
+    .form-contato { padding: 20px 15px; }
+    .form-group input, .form-group textarea { font-size: 0.9rem; padding: 8px 10px; }
+    .enviar-btn { font-size: 0.95rem; padding: 10px 20px; }
 }
 
-/* Smartphones portrait */
+/* ======================= */
+/* SMARTPHONES PORTRAIT (480px) */
+/* ======================= */
 @media (max-width: 480px) {
-    .hero-contato { 
-        padding: 60px 12px; 
-    }
-    .hero-contato h1 { 
-        font-size: 1.5rem; 
-    }
-    .hero-contato p { 
-        font-size: 0.95rem; 
-    }
+    /* Hero */
+    .hero-contato { padding: 60px 12px; }
+    .hero-contato h1 { font-size: 1.5rem; line-height: 1.2; }
+    .hero-contato p { font-size: 0.95rem; line-height: 1.35; }
 
-    .contato-section { 
-        padding: 40px 12px; 
-        gap: 20px; 
-    }
+    /* Contato */
+    .contato-section { padding: 40px 12px; gap: 20px; }
+    .contato-wrapper { flex-direction: column-reverse; gap: 20px; }
+    .contato-left, .contato-right { width: 100%; }
 
-    /* Mantém a ordem: formulário primeiro */
-    .contato-wrapper { 
-        flex-direction: column-reverse; 
-        gap: 20px; 
-    }
+    /* Botões sociais */
+    .btn-social { font-size: 0.9rem; padding: 12px 14px; gap: 8px; }
+    .social-buttons { grid-template-columns: repeat(2, 1fr); }
 
-    .contato-left, .contato-right { 
-        width: 100%; 
-    }
-    
-
-    .btn-social { 
-        font-size: 0.9rem; 
-        padding: 12px 14px; 
-        gap: 8px; 
-    }
-    .form-contato { 
-        padding: 15px 12px; 
-    }
-    .form-group input, .form-group textarea { 
-        font-size: 0.85rem; 
-        padding: 7px 9px; 
-    }
-    .enviar-btn { 
-        font-size: 0.9rem; 
-        padding: 8px 16px; 
-    }
+    /* Formulário */
+    .form-contato { padding: 15px 12px; }
+    .form-group input, .form-group textarea { font-size: 0.85rem; padding: 7px 9px; }
+    .enviar-btn { font-size: 0.9rem; padding: 8px 16px; }
 }
 
-/* Very small phones / 360px */
+/* ======================= */
+/* VERY SMALL PHONES / 360px */
+/* ======================= */
 @media (max-width: 360px) {
-    .hero-contato { 
-        padding: 50px 10px; 
-    }
-    .hero-contato h1 { 
-        font-size: 1.3rem; 
-    }
-    .hero-contato p { 
-        font-size: 0.85rem; 
-    }
+    /* Hero */
+    .hero-contato { padding: 50px 10px; }
+    .hero-contato h1 { font-size: 1.3rem; line-height: 1.15; }
+    .hero-contato p { font-size: 0.85rem; line-height: 1.3; }
 
-    .contato-wrapper { 
-        flex-direction: column-reverse; 
-        gap: 15px; 
-    }
+    /* Contato */
+    .contato-wrapper { flex-direction: column-reverse; gap: 15px; }
 
-    .btn-social { 
-        font-size: 0.85rem; 
-        padding: 10px 12px; 
-    }
-    .form-contato { 
-        padding: 12px 10px; 
-    }
-    .form-group input, .form-group textarea { 
-        font-size: 0.8rem; 
-        padding: 6px 8px; 
-    }
-    .enviar-btn { 
-        font-size: 0.85rem; 
-        padding: 6px 14px; 
-    }
+    /* Botões sociais */
+    .btn-social { font-size: 0.85rem; padding: 10px 12px; }
+
+    /* Formulário */
+    .form-contato { padding: 12px 10px; }
+    .form-group input, .form-group textarea { font-size: 0.8rem; padding: 6px 8px; }
+    .enviar-btn { font-size: 0.85rem; padding: 6px 14px; }
 }

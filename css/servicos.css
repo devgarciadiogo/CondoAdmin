@@ -627,39 +627,50 @@ textarea:focus {
     outline: 2px solid #00cc99; /* cor de destaque */
     outline-offset: 3px;
 }
+/* ======================= */
+/* RESPONSIVIDADE COMPLETA - SERVIÇOS */
+/* ======================= */
 
 /* ======================= */
-/* RESPONSIVIDADE REFINADA */
+/* LARGE SCREENS / DESKTOP */
 /* ======================= */
-
 @media (max-width: 1200px) {
   .container { padding: 0 15px; }
 }
 
-/* Tablet grande / small desktop */
+/* ======================= */
+/* TABLET GRANDE / SMALL DESKTOP */
+/* ======================= */
 @media (max-width: 992px) {
+  /* HERO */
   .hero-servicos { padding: 90px 20px; }
-  .hero-servicos h1 { font-size: 2.2rem; }
-  .hero-servicos p { font-size: 1.05rem; }
+  .hero-servicos h1 { font-size: 2.2rem; line-height: 1.2; }
+  .hero-servicos p { font-size: 1.05rem; line-height: 1.4; }
 
+  /* SERVIÇOS */
   .servicos-section { padding: 60px 20px; }
-  .servicos-section h2 { font-size: 2rem; }
-  .servicos-section p { font-size: 1.15rem; }
+  .servicos-section h2 { font-size: 2rem; line-height: 1.3; }
+  .servicos-section p { font-size: 1.15rem; line-height: 1.5; }
 
+  /* Ucondo */
   .ucondo-section { padding: 60px 20px; }
-  .ucondo-section .section-title { font-size: 2rem; }
-  .ucondo-section .section-description { font-size: 1.1rem; }
+  .ucondo-section .section-title { font-size: 2rem; line-height: 1.3; }
+  .ucondo-section .section-description { font-size: 1.1rem; line-height: 1.5; }
 
+  /* Parceiras */
   .parceiras-section { padding: 60px 20px; }
-  .parceiras-section .section-title { font-size: 2rem; }
-  .parceiras-section .section-description { font-size: 1.15rem; }
+  .parceiras-section .section-title { font-size: 2rem; line-height: 1.3; }
+  .parceiras-section .section-description { font-size: 1.15rem; line-height: 1.5; }
 
+  /* CTA */
   .cta-section { padding: 60px 20px; }
-  .cta-section .cta-title { font-size: 2rem; }
-  .cta-section .cta-description { font-size: 1.05rem; }
+  .cta-section .cta-title { font-size: 2rem; line-height: 1.3; }
+  .cta-section .cta-description { font-size: 1.05rem; line-height: 1.4; }
 }
 
-/* Mobile / tablet pequeno */
+/* ======================= */
+/* MOBILE / TABLET PEQUENO */
+/* ======================= */
 @media (max-width: 768px) {
   /* NAVBAR / HAMBURGER */
   .navbar .nav-links {
@@ -676,19 +687,17 @@ textarea:focus {
     backdrop-filter: blur(4px);
   }
   .navbar .nav-links.show { display: flex; }
-
-  /* mantém o hambúrguer igual ao index */
   .menu-toggle { display: flex; cursor: pointer; }
 
   /* HERO */
   .hero-servicos { padding: 70px 15px; }
-  .hero-servicos h1 { font-size: 1.8rem; }
-  .hero-servicos p { font-size: 1rem; }
+  .hero-servicos h1 { font-size: 1.8rem; line-height: 1.25; }
+  .hero-servicos p { font-size: 1rem; line-height: 1.4; }
 
-  /* SERVIÇOS (textos) */
+  /* SERVIÇOS */
   .servicos-section { padding: 50px 15px; }
-  .servicos-section h2 { font-size: 1.8rem; }
-  .servicos-section p { font-size: 1rem; }
+  .servicos-section h2 { font-size: 1.8rem; line-height: 1.25; }
+  .servicos-section p { font-size: 1rem; line-height: 1.45; }
 
   /* CARROSSEL */
   .cards-wrapper {
@@ -712,83 +721,87 @@ textarea:focus {
     text-align: center;
     scroll-snap-align: start;
   }
+  .card h3 { font-size: 1.1rem; line-height: 1.3; }
+  .card p { font-size: 0.95rem; line-height: 1.4; }
 
-    .carrossel-btn.prev {
-    left: -18px; /* aproxima da tela */
-  }
-  .carrossel-btn.next {
-    right: -20px; /* aproxima da tela */
-  }
-
-  /* Remove as setas no mobile */
-  .carrossel-servicos .carrossel-btn { display: none; }
-
-  .carrossel-servicos .carrossel-btn {
-    display: flex;
-    width: 32px;
-    height: 32px;
-    font-size: 1.2rem;
-  }
+  /* CARROSSEL BOTÕES */
+  .carrossel-btn.prev { left: -18px; }
+  .carrossel-btn.next { right: -20px; }
+  .carrossel-servicos .carrossel-btn { display: flex; width: 32px; height: 32px; font-size: 1.2rem; }
 
   /* Ucondo / Parceiras / CTA */
   .ucondo-section { padding: 50px 15px; }
-  .ucondo-section .section-title { font-size: 1.8rem; }
-  .ucondo-section .section-description { font-size: 1rem; }
+  .ucondo-section .section-title { font-size: 1.8rem; line-height: 1.25; }
+  .ucondo-section .section-description { font-size: 1rem; line-height: 1.4; }
 
   .parceiras-section { padding: 50px 15px; }
   .parceiras-logos { gap: 25px; }
+  .parceiras-section .section-title { font-size: 1.8rem; line-height: 1.25; }
+  .parceiras-section .section-description { font-size: 1rem; line-height: 1.4; }
 
   .cta-section { padding: 50px 15px; }
-  .cta-section .cta-title { font-size: 1.8rem; }
-  .cta-section .cta-description { font-size: 1rem; }
+  .cta-section .cta-title { font-size: 1.8rem; line-height: 1.25; }
+  .cta-section .cta-description { font-size: 1rem; line-height: 1.4; }
 
-  /* Botões */
+  /* BOTÕES */
   .btn { padding: 10px 20px; font-size: 1rem; }
 }
 
-/* Smartphones (portrait) */
+/* ======================= */
+/* SMARTPHONES (PORTRAIT) */
+/* ======================= */
 @media (max-width: 480px) {
   .hero-servicos { padding: 60px 12px; }
-  .hero-servicos h1 { font-size: 1.5rem; }
-  .hero-servicos p { font-size: 0.95rem; }
+  .hero-servicos h1 { font-size: 1.5rem; line-height: 1.2; }
+  .hero-servicos p { font-size: 0.95rem; line-height: 1.35; }
 
   .servicos-section { padding: 40px 12px; }
-  .servicos-section h2 { font-size: 1.5rem; }
-  .servicos-section p { font-size: 0.95rem; }
+  .servicos-section h2 { font-size: 1.5rem; line-height: 1.2; }
+  .servicos-section p { font-size: 0.95rem; line-height: 1.35; }
 
   .cards-wrapper { gap: 12px; padding: 8px 12px; }
   .card { min-width: 160px; max-width: 160px; padding: 10px; }
-  .card h3 { font-size: 0.95rem; }
-  .card p { font-size: 0.82rem; line-height: 1.05rem; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-    .carrossel-btn.prev {
-    left:-20px;
-  }
-  .carrossel-btn.next {
-    right: -20px;
-  }
+  .card h3 { font-size: 1rem; line-height: 1.2; }
+  .card p { font-size: 0.85rem; line-height: 1.3; }
+
+  .carrossel-btn.prev { left: -20px; }
+  .carrossel-btn.next { right: -20px; }
+
   .ucondo-section { padding: 40px 12px; }
-  .ucondo-section .section-title { font-size: 1.5rem; }
-  .ucondo-section .section-description { font-size: 0.95rem; }
+  .ucondo-section .section-title { font-size: 1.5rem; line-height: 1.2; }
+  .ucondo-section .section-description { font-size: 0.95rem; line-height: 1.35; }
 
   .parceiras-section { padding: 40px 12px; }
   .cta-section { padding: 40px 12px; }
   .btn { padding: 8px 18px; font-size: 0.95rem; }
 }
 
-/* Very small phones */
+/* ======================= */
+/* VERY SMALL PHONES */
+/* ======================= */
 @media (max-width: 360px) {
   .hero-servicos { padding: 50px 10px; }
-  .hero-servicos h1 { font-size: 1.3rem; }
-  .hero-servicos p { font-size: 0.85rem; }
+  .hero-servicos h1 { font-size: 1.3rem; line-height: 1.15; }
+  .hero-servicos p { font-size: 0.85rem; line-height: 1.3; }
+
+  .servicos-section h2 { font-size: 1.3rem; line-height: 1.15; }
+  .servicos-section p { font-size: 0.85rem; line-height: 1.3; }
 
   .card { min-width: 120px; max-width: 120px; padding: 8px; }
-  .card h3 { font-size: 0.9rem; }
-  .card p { font-size: 0.75rem; line-height: 1rem; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-    .carrossel-btn.prev {
-    left: 2px;
-  }
-  .carrossel-btn.next {
-    right: -2px;
-  }
+  .card h3 { font-size: 0.95rem; line-height: 1.15; }
+  .card p { font-size: 0.75rem; line-height: 1.2; }
+
+  .carrossel-btn.prev { left: 2px; }
+  .carrossel-btn.next { right: -2px; }
+
+  .ucondo-section .section-title { font-size: 1.3rem; line-height: 1.15; }
+  .ucondo-section .section-description { font-size: 0.85rem; line-height: 1.3; }
+
+  .parceiras-section .section-title { font-size: 1.3rem; line-height: 1.15; }
+  .parceiras-section .section-description { font-size: 0.85rem; line-height: 1.3; }
+
+  .cta-section .cta-title { font-size: 1.3rem; line-height: 1.15; }
+  .cta-section .cta-description { font-size: 0.85rem; line-height: 1.3; }
+
   .btn { padding: 6px 14px; font-size: 0.85rem; }
 }
