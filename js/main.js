@@ -172,3 +172,41 @@ window.addEventListener("scroll", () => {
   const scrollPercent = (scrollTop / docHeight) * 100;
   scrollIndicator.style.width = scrollPercent + "%";
 });
+
+// =======================
+// ENVIO DE FORMULÁRIO CONTATO
+// =======================
+const contatoForm = document.getElementById("contatoForm");
+
+if (contatoForm) {
+  contatoForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      nome: contatoForm.nome.value,
+      email: contatoForm.email.value,
+      assunto: contatoForm.assunto.value,
+      mensagem: contatoForm.mensagem.value,
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Mensagem enviada com sucesso!");
+        contatoForm.reset();
+      } else {
+        alert("Erro: " + result.error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao enviar mensagem. Tente novamente.");
+    }
+  });
+}
