@@ -575,6 +575,12 @@ textarea:focus {
     flex-direction: row-reverse; /* Formulário à direita */
 }
 
+@media (min-width: 1024px) {
+  .contato-info p:nth-child(1) { 
+    white-space: nowrap; 
+  }
+}
+
 /* ======================= */
 /* TABLET GRANDE / SMALL DESKTOP (992px) */
 /* ======================= */
@@ -629,6 +635,10 @@ textarea:focus {
     /* Botões sociais */
     .btn-social { width: 100%; max-width: 180px; font-size: 0.95rem; padding: 14px 16px; text-align: center; justify-content: center; }
     .social-buttons { display: grid; grid-template-columns: repeat(2, 1fr); justify-items: center; gap: 12px; }
+    
+    .social-buttons a:last-child {
+        grid-column: 1 / -1; /* ocupa todas as colunas */
+    }
 
     /* Formulário */
     .form-contato { padding: 20px 15px; }
