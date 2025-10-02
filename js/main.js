@@ -191,7 +191,7 @@ if (contatoForm) {
 
     try {
       const response = await fetch("http://localhost:3000/send", {
-        method: "POST",
+        //Dominio HostGator
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
