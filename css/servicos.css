@@ -577,6 +577,7 @@ header.scrolled {
     color: #eee;
     line-height: 1.3;
     word-break: break-word;
+    text-align: justify;
 }
 
 .footer-social a {
