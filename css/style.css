@@ -569,7 +569,6 @@ textarea:focus {
         backdrop-filter: blur(4px);
         z-index: 9999;
     }
-
     .navbar .nav-links.show { display: flex; }
     .menu-toggle { display: flex; }
     .nav-links li a {
@@ -591,12 +590,12 @@ textarea:focus {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        text-align: justify;
+        text-align: left; /* alinhado à esquerda */
     }
     .presentation-section p { 
         font-size: 1rem;
         line-height: 1.7;
-        text-align: justify;
+        text-align: left; /* alinhado à esquerda */
     }
 
     /* Filosofia / Cards */
@@ -622,6 +621,7 @@ textarea:focus {
     .missao-visao-valores p { 
         font-size: 1rem; 
         line-height: 1.7;
+        text-align: left; /* alinhado à esquerda */
     }
     .missao-visao-valores ul li { 
         font-size: 0.98rem; 
@@ -649,12 +649,12 @@ textarea:focus {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        text-align: justify;
+        text-align: left; /* alinhado à esquerda */
     }
     .presentation-section p { 
         font-size: 0.95rem;
         line-height: 1.65;
-        text-align: justify;
+        text-align: left; /* alinhado à esquerda */
     }
 
     /* Filosofia / Cards */
@@ -669,7 +669,11 @@ textarea:focus {
     }
 
     .missao-visao-valores h3 { font-size: 1.15rem; }
-    .missao-visao-valores p { font-size: 0.95rem; line-height: 1.6; }
+    .missao-visao-valores p { 
+        font-size: 0.95rem; 
+        line-height: 1.6;
+        text-align: left; /* alinhado à esquerda */
+    }
     .missao-visao-valores ul li { font-size: 0.92rem; line-height: 1.5; margin-bottom: 10px; }
 
     /* Call to Action */
@@ -692,12 +696,12 @@ textarea:focus {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        text-align: justify;
+        text-align: left; /* alinhado à esquerda */
     }
     .presentation-section p { 
         font-size: 0.9rem;
         line-height: 1.6;
-        text-align: justify;
+        text-align: left; /* alinhado à esquerda */
     }
 
     /* Filosofia / Cards */
@@ -712,7 +716,11 @@ textarea:focus {
     }
 
     .missao-visao-valores h3 { font-size: 1.1rem; }
-    .missao-visao-valores p { font-size: 0.88rem; line-height: 1.5; }
+    .missao-visao-valores p { 
+        font-size: 0.88rem; 
+        line-height: 1.5;
+        text-align: left; /* alinhado à esquerda */
+    }
     .missao-visao-valores ul li { font-size: 0.85rem; line-height: 1.4; margin-bottom: 9px; }
 
     /* Call to Action */
