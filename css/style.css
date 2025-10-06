@@ -556,26 +556,10 @@ textarea:focus {
 /* ======================= */
 @media (max-width: 768px) {
     /* Navbar / Hamburger */
-    .navbar .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1.5rem 1rem;
-        gap: 1rem;
-        background-color: #2b4544;
-        backdrop-filter: blur(4px);
-        z-index: 9999;
-    }
-
+    .navbar .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; padding: 1.5rem 1rem; gap: 1rem; background-color: #2b4544; backdrop-filter: blur(4px); z-index: 9999; }
     .navbar .nav-links.show { display: flex; }
     .menu-toggle { display: flex; }
-    .nav-links li a {
-        font-size: 1rem;
-        padding: 0.5rem 0;
-    }
+    .nav-links li a { font-size: 1rem; padding: 0.5rem 0; }
     .navbar-container { flex-wrap: nowrap; }
 
     /* Hero */
@@ -585,65 +569,30 @@ textarea:focus {
 
     /* Apresentação */
     .presentation-section { padding: 50px 18px; }
-    .presentation-section .container {
-        max-width: 100%;
-        padding: 0 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: justify;
-    }
-    .presentation-section p { 
-        font-size: 1rem;
-        line-height: 1.7;
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
-    }
+    .presentation-section .container { max-width: 100%; padding: 0 5px; display: flex; flex-direction: column; align-items: flex-start; text-align: justify; hyphens: auto; word-spacing: normal; }
+    .presentation-section p { font-size: 1rem; line-height: 1.7; text-align: justify; hyphens: auto; word-spacing: normal; }
 
     /* Filosofia / Cards */
     .filosofia-section { padding: 60px 15px; }
     .filosofia-section h2 { font-size: 1.8rem; line-height: 1.3; }
+    .missao-visao-valores { gap: 20px; max-width: 100%; }
+    .missao-visao-valores .card { min-width: 100%; max-width: 100%; min-height: 250px; padding: 40px 30px; }
 
-    .missao-visao-valores {
-        gap: 20px;
-        max-width: 100%;
-    }
-
-    .missao-visao-valores .card {
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 250px; /* aumento para mobile */
-        padding: 40px 30px; /* mais espaçamento */
-    }
-
-    .missao-visao-valores h3 { 
-        font-size: 1.25rem; 
-        margin-bottom: 15px;
-    }
-    .missao-visao-valores p { 
+    /* Cards: todos os <p> com mesma fonte */
+    .missao-visao-valores .card p { 
         font-size: 1rem; 
-        line-height: 1.7;
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
+        line-height: 1.7; 
+        text-align: justify; 
+        hyphens: auto; 
+        word-spacing: normal; 
     }
-    .missao-visao-valores ul li { 
-        font-size: 0.98rem; 
-        line-height: 1.6;
-        margin-bottom: 12px;
-    }
+    .missao-visao-valores ul li { font-size: 0.98rem; line-height: 1.6; margin-bottom: 12px; }
+    .missao-visao-valores h3 { font-size: 1.25rem; margin-bottom: 15px; }
 
     /* Call to Action */
     .cta-section { padding: 60px 15px; }
     .cta-section h2 { font-size: 1.9rem; line-height: 1.3; }
-    .cta-section p { 
-        font-size: 1.05rem; 
-        line-height: 1.6; 
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
-    }
+    .cta-section p { font-size: 1.05rem; line-height: 1.6; text-align: justify; hyphens: auto; word-spacing: normal; }
     .btn { font-size: 1rem; padding: 11px 22px; }
 }
 
@@ -655,52 +604,29 @@ textarea:focus {
 
     /* Apresentação */
     .presentation-section { padding: 45px 15px; }
-    .presentation-section .container {
-        padding: 0 3px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: justify;
-    }
-    .presentation-section p { 
-        font-size: 0.95rem;
-        line-height: 1.65;
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
-    }
+    .presentation-section .container { padding: 0 3px; display: flex; flex-direction: column; align-items: flex-start; text-align: justify; }
+    .presentation-section p { font-size: 0.95rem; line-height: 1.65; text-align: justify; hyphens: auto; word-spacing: normal; }
 
     /* Filosofia / Cards */
     .filosofia-section { padding: 50px 12px; }
     .filosofia-section h2 { font-size: 1.6rem; }
+    .missao-visao-valores .card { min-width: 100%; max-width: 100%; min-height: 260px; padding: 45px 30px; }
 
-    .missao-visao-valores .card {
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 260px;
-        padding: 45px 30px;
-    }
-
-    .missao-visao-valores h3 { font-size: 1.15rem; }
-    .missao-visao-valores p { 
+    /* Todos os <p> com mesmo tamanho */
+    .missao-visao-valores .card p { 
         font-size: 0.95rem; 
-        line-height: 1.6; 
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
+        line-height: 1.65; 
+        text-align: justify; 
+        hyphens: auto; 
+        word-spacing: normal; 
     }
     .missao-visao-valores ul li { font-size: 0.92rem; line-height: 1.5; margin-bottom: 10px; }
+    .missao-visao-valores h3 { font-size: 1.15rem; }
 
     /* Call to Action */
     .cta-section { padding: 50px 12px; }
     .cta-section h2 { font-size: 1.6rem; }
-    .cta-section p { 
-        font-size: 0.95rem; 
-        line-height: 1.5; 
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
-    }
+    .cta-section p { font-size: 0.95rem; line-height: 1.5; text-align: justify; hyphens: auto; word-spacing: normal; }
     .btn { font-size: 0.95rem; padding: 10px 20px; }
 }
 
@@ -712,51 +638,29 @@ textarea:focus {
 
     /* Apresentação */
     .presentation-section { padding: 40px 12px; }
-    .presentation-section .container {
-        padding: 0 2px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: justify;
-    }
-    .presentation-section p { 
-        font-size: 0.9rem;
-        line-height: 1.6;
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
-    }
+    .presentation-section .container { padding: 0 2px; display: flex; flex-direction: column; align-items: flex-start; text-align: justify; }
+    .presentation-section p { font-size: 0.9rem; line-height: 1.6; text-align: justify; hyphens: auto; word-spacing: normal; }
 
     /* Filosofia / Cards */
     .filosofia-section { padding: 40px 10px; }
     .filosofia-section h2 { font-size: 1.4rem; }
+    .missao-visao-valores .card { min-width: 100%; max-width: 100%; min-height: 270px; padding: 50px 25px; }
 
-    .missao-visao-valores .card {
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 270px;
-        padding: 50px 25px;
-    }
-
-    .missao-visao-valores h3 { font-size: 1.1rem; }
-    .missao-visao-valores p { 
-        font-size: 0.88rem; 
-        line-height: 1.5; 
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
+    /* Todos os <p> com mesmo tamanho */
+    .missao-visao-valores .card p { 
+        font-size: 0.9rem; 
+        line-height: 1.6; 
+        text-align: justify; 
+        hyphens: auto; 
+        word-spacing: normal; 
     }
     .missao-visao-valores ul li { font-size: 0.85rem; line-height: 1.4; margin-bottom: 9px; }
+    .missao-visao-valores h3 { font-size: 1.1rem; }
 
     /* Call to Action */
     .cta-section { padding: 40px 10px; }
     .cta-section h2 { font-size: 1.4rem; }
-    .cta-section p { 
-        font-size: 0.88rem; 
-        line-height: 1.4; 
-        text-align: justify;
-        hyphens: auto;
-        word-spacing: normal;
-    }
+    .cta-section p { font-size: 0.88rem; line-height: 1.4; text-align: justify; hyphens: auto; word-spacing: normal; }
     .btn { font-size: 0.88rem; padding: 9px 18px; }
 }
+
