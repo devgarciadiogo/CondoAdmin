@@ -572,7 +572,10 @@ textarea:focus {
 
     .navbar .nav-links.show { display: flex; }
     .menu-toggle { display: flex; }
-    .nav-links li a { font-size: 1rem; padding: 0.5rem 0; }
+    .nav-links li a {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
     .navbar-container { flex-wrap: nowrap; }
 
     /* Hero */
@@ -588,8 +591,13 @@ textarea:focus {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        text-align: justify;
     }
-    .presentation-section p { font-size: 1rem; line-height: 1.7; }
+    .presentation-section p { 
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: justify;
+    }
 
     /* Filosofia / Cards */
     .filosofia-section { padding: 60px 15px; }
@@ -599,20 +607,32 @@ textarea:focus {
         gap: 20px;
         max-width: 100%;
     }
+
     .missao-visao-valores .card {
         min-width: 100%;
         max-width: 100%;
-        min-height: 250px;
-        padding: 40px 30px;
+        min-height: 250px; /* aumento para mobile */
+        padding: 40px 30px; /* mais espaçamento */
     }
-    .missao-visao-valores h3 { font-size: 1.25rem; margin-bottom: 15px; }
-    .missao-visao-valores p { font-size: 1rem; line-height: 1.7; }
-    .missao-visao-valores ul li { font-size: 0.98rem; line-height: 1.6; margin-bottom: 12px; }
+
+    .missao-visao-valores h3 { 
+        font-size: 1.25rem; 
+        margin-bottom: 15px;
+    }
+    .missao-visao-valores p { 
+        font-size: 1rem; 
+        line-height: 1.7;
+    }
+    .missao-visao-valores ul li { 
+        font-size: 0.98rem; 
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
 
     /* Call to Action */
     .cta-section { padding: 60px 15px; }
     .cta-section h2 { font-size: 1.9rem; line-height: 1.3; }
-    .cta-section p { font-size: 1.05rem; line-height: 1.6; text-align: justify; } /* JUSTIFY MOBILE */
+    .cta-section p { font-size: 1.05rem; line-height: 1.6; }
     .btn { font-size: 1rem; padding: 11px 22px; }
 }
 
@@ -624,13 +644,30 @@ textarea:focus {
 
     /* Apresentação */
     .presentation-section { padding: 45px 15px; }
-    .presentation-section .container { padding: 0 3px; display: flex; flex-direction: column; align-items: flex-start; }
-    .presentation-section p { font-size: 0.95rem; line-height: 1.65; }
+    .presentation-section .container {
+        padding: 0 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: justify;
+    }
+    .presentation-section p { 
+        font-size: 0.95rem;
+        line-height: 1.65;
+        text-align: justify;
+    }
 
     /* Filosofia / Cards */
     .filosofia-section { padding: 50px 12px; }
     .filosofia-section h2 { font-size: 1.6rem; }
-    .missao-visao-valores .card { min-height: 260px; padding: 45px 30px; }
+
+    .missao-visao-valores .card {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 260px; /* aumento para mobile menor */
+        padding: 45px 30px;
+    }
+
     .missao-visao-valores h3 { font-size: 1.15rem; }
     .missao-visao-valores p { font-size: 0.95rem; line-height: 1.6; }
     .missao-visao-valores ul li { font-size: 0.92rem; line-height: 1.5; margin-bottom: 10px; }
@@ -638,7 +675,7 @@ textarea:focus {
     /* Call to Action */
     .cta-section { padding: 50px 12px; }
     .cta-section h2 { font-size: 1.6rem; }
-    .cta-section p { font-size: 0.95rem; line-height: 1.5; text-align: justify; } /* JUSTIFY MOBILE */
+    .cta-section p { font-size: 0.95rem; line-height: 1.5; }
     .btn { font-size: 0.95rem; padding: 10px 20px; }
 }
 
@@ -650,13 +687,30 @@ textarea:focus {
 
     /* Apresentação */
     .presentation-section { padding: 40px 12px; }
-    .presentation-section .container { padding: 0 2px; display: flex; flex-direction: column; align-items: flex-start; }
-    .presentation-section p { font-size: 0.9rem; line-height: 1.6; }
+    .presentation-section .container {
+        padding: 0 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: justify;
+    }
+    .presentation-section p { 
+        font-size: 0.9rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
 
     /* Filosofia / Cards */
     .filosofia-section { padding: 40px 10px; }
     .filosofia-section h2 { font-size: 1.4rem; }
-    .missao-visao-valores .card { min-height: 270px; padding: 50px 25px; }
+
+    .missao-visao-valores .card {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 270px; /* aumento para mobile bem pequeno */
+        padding: 50px 25px;
+    }
+
     .missao-visao-valores h3 { font-size: 1.1rem; }
     .missao-visao-valores p { font-size: 0.88rem; line-height: 1.5; }
     .missao-visao-valores ul li { font-size: 0.85rem; line-height: 1.4; margin-bottom: 9px; }
@@ -664,6 +718,6 @@ textarea:focus {
     /* Call to Action */
     .cta-section { padding: 40px 10px; }
     .cta-section h2 { font-size: 1.4rem; }
-    .cta-section p { font-size: 0.88rem; line-height: 1.4; text-align: justify; } /* JUSTIFY MOBILE */
+    .cta-section p { font-size: 0.88rem; line-height: 1.4; }
     .btn { font-size: 0.88rem; padding: 9px 18px; }
 }
