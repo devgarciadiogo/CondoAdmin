@@ -291,11 +291,15 @@ header.scrolled {
   color: #15b78f;
   margin-bottom: 10px;
   font-size: 1.2rem;
+  text-align: center;  /* <-- ADICIONADO */
 }
 
 .card p {
   font-size: 1rem;
   color: #555;
+  text-align: justify; /* <-- ADICIONADO */
+  hyphens: auto; /* habilita quebra de palavras automática */
+  text-justify: inter-word;
 }
 
 /* Botões do carrossel */
@@ -361,29 +365,31 @@ header.scrolled {
 }
 
 .ucondo-section .section-description {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   max-width: 750px;
   margin: 0 auto 50px auto;
   color: #fff;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .highlight-ucondo{
     color: #b6a7f7;
 }
 
-
 .ucondo-cards {
   display: flex;
   gap: 25px;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: stretch; /* força todos os cards a terem a mesma altura */
 }
 
 .ucondo-card {
   background-color: #fff;
   border-radius: 15px;
-  padding: 30px 50px;
-  max-width: 300px;
+  padding: 40px 30px; /* aumenta largura interna */
+  max-width: 320px; /* deixa um pouco maior */
   flex: 1 1 280px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -405,13 +411,23 @@ header.scrolled {
   font-size: 1.25rem;
   color: #8677c7;
   margin-bottom: 10px;
+  text-align: center; /* garante que os títulos fiquem centralizados */
+
+}
+
+.ucondo-card.assistente p {
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .ucondo-card p {
   font-size: 0.95rem;
   color: #555;
-  line-height: 1.5;
-  text-align: center;
+  line-height: 1.6; /* aumenta espaçamento vertical */
+  hyphens: auto;
+  word-spacing: normal;
+  text-align: justify;
+
 }
 
 /* ======================= */
