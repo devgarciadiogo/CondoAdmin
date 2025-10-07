@@ -806,7 +806,7 @@ textarea:focus {
   .parceiras-section .section-description { font-size: 0.95rem; }
 
   .cta-section { padding: 40px 12px; }
-  .cta-section .cta-title { font-size: 1.5rem; }
+  .cta-section .cta-title { font-size: 1.4rem; line-height: 1.2; }
   .cta-section .cta-description { font-size: 0.95rem; }
 
   .btn { padding: 8px 18px; font-size: 0.95rem; }
