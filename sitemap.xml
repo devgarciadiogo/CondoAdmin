@@ -11,7 +11,7 @@
 
   <!-- Serviços -->
   <url>
-    <loc>https://www.lmcondominios.com.br/servicos.html</loc>
+    <loc>https://www.lmcondominios.com.br/servicos</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
 
   <!-- Contato -->
   <url>
-    <loc>https://www.lmcondominios.com.br/contato.html</loc>
+    <loc>https://www.lmcondominios.com.br/contato</loc>
     <lastmod>2025-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

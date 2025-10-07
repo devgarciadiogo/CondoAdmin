@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/servicos.html",
+      "destination": "/servicos",
+      "permanent": true
+    },
+    { "source": "/contato.html", "destination": "/contato", "permanent": true }
+  ]
+}
