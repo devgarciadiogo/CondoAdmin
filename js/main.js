@@ -1,13 +1,11 @@
 // =======================
-// HERO VIDEO LOOP
+// HERO VIDEO LOOP (otimizado)
 // =======================
 const video = document.getElementById("heroVideo");
 if (video) {
-  video.addEventListener("timeupdate", () => {
-    if (video.currentTime >= video.duration - 0.2) {
-      video.currentTime = 0;
-      video.play();
-    }
+  video.addEventListener("ended", () => {
+    video.currentTime = 0;
+    video.play();
   });
 }
 
@@ -71,26 +69,38 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // =======================
-// STICKY HEADER SHADOW
+// STICKY HEADER, BACK-TO-TOP E SCROLL INDICATOR (unificado)
 // =======================
 const header = document.querySelector("header");
+const backToTop = document.getElementById("back-to-top");
+
+// Cria a barra de scroll se ainda não existir
+let scrollIndicator = document.querySelector(".scroll-indicator");
+if (!scrollIndicator) {
+  scrollIndicator = document.createElement("div");
+  scrollIndicator.classList.add("scroll-indicator");
+  document.body.appendChild(scrollIndicator);
+}
+
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 10) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+  window.requestAnimationFrame(() => {
+    const scrollY = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    // Sticky header
+    header?.classList.toggle("scrolled", scrollY > 10);
+
+    // Back to top
+    if (backToTop) backToTop.style.display = scrollY > 300 ? "flex" : "none";
+
+    // Scroll indicator
+    if (scrollIndicator) {
+      scrollIndicator.style.width = (scrollY / docHeight) * 100 + "%";
+    }
+  });
 });
 
-// =======================
-// BOTÃO VOLTAR AO TOPO
-// =======================
-const backToTop = document.getElementById("back-to-top");
-window.addEventListener("scroll", () => {
-  if (backToTop) {
-    backToTop.style.display = window.scrollY > 300 ? "flex" : "none";
-  }
-});
 if (backToTop) {
   backToTop.addEventListener("click", (e) => {
     e.preventDefault();
@@ -99,30 +109,16 @@ if (backToTop) {
 }
 
 // =======================
-// BARRA DE SCROLL DINÂMICA
+// SWIPER SERVIÇOS
 // =======================
-const scrollIndicator = document.createElement("div");
-scrollIndicator.classList.add("scroll-indicator");
-document.body.appendChild(scrollIndicator);
-
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-  scrollIndicator.style.width = scrollPercent + "%";
-});
-
 const swiper = new Swiper(".servicos-swiper", {
-  loop: true, // Se quiser o loop infinito no mobile, COMENTE 'centeredSlides: true' abaixo.
+  loop: true,
   slidesPerView: 3,
   spaceBetween: 30,
-  // === ADICIONE ESTE BLOCO DE VOLTA ===
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-  // =================================
-
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -133,17 +129,17 @@ const swiper = new Swiper(".servicos-swiper", {
     768: {
       slidesPerView: 1.1,
       spaceBetween: 15,
-      centeredSlides: true, // MANTENHA para a centralização perfeita // Removido loop: false
+      centeredSlides: true,
     },
     480: {
       slidesPerView: 1.1,
       spaceBetween: 15,
-      centeredSlides: true, // Removido loop: false
+      centeredSlides: true,
     },
     360: {
       slidesPerView: 1.1,
       spaceBetween: 15,
-      centeredSlides: true, // Removido loop: false
+      centeredSlides: true,
     },
   },
 });
