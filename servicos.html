@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
     <!--CSS-->
     <link rel="stylesheet" href="css/servicos.css">
@@ -41,69 +42,66 @@
         </div>
     </header>
 
-    <!--Hero-->
-    <section class="hero-servicos">
-      <div class="container">
-        <h1>Nossos Serviços de Gestão Condominial</h1>
-        <p>Gestão administrativa, financeira e operacional completa para condomínios residenciais e comerciais.</p>
-      </div>
-    </section>
+<!-- Hero -->
+<section class="hero-servicos">
+  <div class="container">
+    <h1>Nossos Serviços de Gestão Condominial</h1>
+    <p>Gestão administrativa, financeira e operacional completa para condomínios residenciais e comerciais.</p>
+  </div>
+</section>
 
-    <!-- Serviços - Carrossel -->
-    <section class="servicos-section fade-in">
-      <div class="container">
-        <h2>Nossos Serviços</h2>
-        <p>Oferecemos soluções completas para a gestão do seu condomínio com eficiência e transparência.</p>
+<!-- Seção Serviços -->
+<section class="servicos-section fade-in">
+  <div class="container">
+    <h2>Nossos Serviços</h2>
+    <p>Oferecemos soluções completas para a gestão do seu condomínio com eficiência e transparência.</p>
 
-        <div class="carrossel-servicos">
-          <!-- Botão anterior -->
-          <button class="carrossel-btn prev" aria-label="Serviço anterior">‹</button>
-
-          <!-- Wrapper com os cards -->
-          <div class="cards-wrapper">
-            <div class="card">
-              <img src="images/inadimplência.jpg" alt="Gestão de Inadimplência">
-              <h3>Gestão de Inadimplência</h3>
-              <p>Recuperação de crédito eficiente com CRM moderno, reduzindo a inadimplência condominial em mais de 70%.</p>
-            </div>
-
-            <div class="card">
-              <img src="images/recursoshumanos.jpg" alt="Gestão em Recursos Humanos">
-              <h3>Gestão em Recursos Humanos</h3>
-              <p>Folhas de pagamento, contratos e suporte ao síndico para cumprimento das normas trabalhistas e previdenciárias.</p>
-            </div>
-
-            <div class="card">
-              <img src="images/financeira.jpg" alt="Gestão Financeira e Administrativa">
-              <h3>Gestão Financeira e Administrativa</h3>
-              <p>Orçamentos, assembleias, contas a pagar/receber, balancetes e prestação de contas totalmente digital.</p>
-            </div>
-
-            <div class="card">
-              <img src="images/juridica.jpg" alt="Gestão Jurídica">
-              <h3>Gestão Jurídica</h3>
-              <p>Suporte legal, resolução de conflitos, gestão de contratos e defesa condominial em ações judiciais e administrativas.</p>
-            </div>
-
-            <div class="card">
-              <img src="images/sindico.jpg" alt="Síndico Profissional">
-              <h3>Síndico Profissional</h3>
-              <p>Profissionalização da gestão condominial com síndicos certificados e experientes no mercado imobiliário.</p>
-            </div>
-
-            <div class="card">
-              <img src="images/implantação de condominios.jpg" alt="Implantação de Condomínios">
-              <h3>Implantação de Condomínios</h3>
-              <p>Implantação completa de condomínios, elaboração de convenções, regulamentos internos e regularização jurídica.</p>
-            </div>
-          </div>
-          
-
-          <!-- Botão próximo -->
-          <button class="carrossel-btn next" aria-label="Próximo serviço">›</button>
+    <!-- Carrossel Swiper -->
+    <div class="servicos-swiper swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide card">
+          <img src="images/inadimplência.jpg" alt="Gestão de Inadimplência">
+          <h3>Gestão de Inadimplência</h3>
+          <p>Recuperação de crédito eficiente com CRM moderno, reduzindo a inadimplência condominial em mais de 70%.</p>
+        </div>
+        <div class="swiper-slide card">
+          <img src="images/recursoshumanos.jpg" alt="Gestão em Recursos Humanos">
+          <h3>Gestão em Recursos Humanos</h3>
+          <p>Folhas de pagamento, contratos e suporte ao síndico para cumprimento das normas trabalhistas e previdenciárias.</p>
+        </div>
+        <div class="swiper-slide card">
+          <img src="images/financeira.jpg" alt="Gestão Financeira e Administrativa">
+          <h3>Gestão Financeira e Administrativa</h3>
+          <p>Orçamentos, assembleias, contas a pagar/receber, balancetes e prestação de contas totalmente digital.</p>
+        </div>
+        <div class="swiper-slide card">
+          <img src="images/juridica.jpg" alt="Gestão Jurídica">
+          <h3>Gestão Jurídica</h3>
+          <p>Suporte legal, resolução de conflitos, gestão de contratos e defesa condominial em ações judiciais e administrativas.</p>
+        </div>
+        <div class="swiper-slide card">
+          <img src="images/sindico.jpg" alt="Síndico Profissional">
+          <h3>Síndico Profissional</h3>
+          <p>Profissionalização da gestão condominial com síndicos certificados e experientes no mercado imobiliário.</p>
+        </div>
+        <div class="swiper-slide card">
+          <img src="images/implantação de condominios.jpg" alt="Implantação de Condomínios">
+          <h3>Implantação de Condomínios</h3>
+          <p>Implantação completa de condomínios, elaboração de convenções, regulamentos internos e regularização jurídica.</p>
         </div>
       </div>
-    </section>
+
+      <!-- Botões de navegação -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
 
   <!--Ucondo Section-->
   <section id="diferencial-ucondo" class="ucondo-section fade-in">
@@ -144,19 +142,7 @@
         </p>
         <div class="parceiras-logos">
           <div class="parceira-logo">
-            <img src="images/teste.png" alt="Empresa 1">
-          </div>
-          <div class="parceira-logo">
-            <img src="images/mcdonalds.png" alt="Empresa 2">
-          </div>
-          <div class="parceira-logo">
-            <img src="images/smart fit.png" alt="Empresa 3">
-          </div>
-          <div class="parceira-logo">
-            <img src="images/rede dor.png" alt="Empresa 4">
-          </div>
-          <div class="parceira-logo">
-            <img src="images/petrobras.png" alt="Empresa 5">
+            <img src="images/smartkon.png" alt="Empresa 1">
           </div>
         </div>
       </div>
@@ -230,6 +216,8 @@
       </svg>
     </a>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

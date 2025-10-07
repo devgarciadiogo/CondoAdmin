@@ -388,6 +388,7 @@ header.scrolled {
 }
 
 .cta-section h2 {
+    text-align: justify;
     font-size: 2.2rem;
     margin-bottom: 20px;
     font-weight: 700;
@@ -395,6 +396,7 @@ header.scrolled {
 }
 
 .cta-section p {
+    text-align: justify;
     font-size: 1.2rem;
     margin-bottom: 30px;
     line-height: 1.7;

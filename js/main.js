@@ -71,21 +71,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // =======================
-// HERO PARALLAX (SOMENTE HOMEPAGE)
-// =======================
-if (
-  window.location.pathname === "/index.html" ||
-  window.location.pathname === "/"
-) {
-  const heroContent = document.querySelector(".hero-content");
-  if (heroContent) {
-    window.addEventListener("scroll", () => {
-      heroContent.style.transform = `translateY(${window.scrollY * 0.5}px)`;
-    });
-  }
-}
-
-// =======================
 // STICKY HEADER SHADOW
 // =======================
 const header = document.querySelector("header");
@@ -114,58 +99,12 @@ if (backToTop) {
 }
 
 // =======================
-// CARROSSEL DINÂMICO DESKTOP + MOBILE (somente setas)
+// BARRA DE SCROLL DINÂMICA
 // =======================
-const carrossel = document.querySelector(".carrossel-servicos");
-if (carrossel) {
-  const wrapper = carrossel.querySelector(".cards-wrapper");
-  const prevBtn = carrossel.querySelector(".carrossel-btn.prev");
-  const nextBtn = carrossel.querySelector(".carrossel-btn.next");
-
-  const allCardsData = Array.from(wrapper.children).map((card) => ({
-    html: card.outerHTML,
-  }));
-
-  const visibleCount = 4; // cards visíveis na tela
-  const buffer = 2; // cards extras fora da tela
-  let startIndex = 0;
-
-  // Inicializa o carrossel virtual
-  function render() {
-    wrapper.innerHTML = "";
-    const totalToRender = visibleCount + buffer * 2;
-    for (let i = 0; i < totalToRender; i++) {
-      const index = (startIndex + i) % allCardsData.length;
-      wrapper.innerHTML += allCardsData[index].html;
-    }
-    wrapper.scrollLeft =
-      buffer * (wrapper.querySelector(".card").offsetWidth + 20);
-  }
-
-  render();
-
-  // Atualizar índice ao clicar nas setas
-  function updateIndex(direction) {
-    if (direction === "next")
-      startIndex = (startIndex + 1) % allCardsData.length;
-    if (direction === "prev")
-      startIndex = (startIndex - 1 + allCardsData.length) % allCardsData.length;
-    render();
-  }
-
-  // =======================
-  // Botões Desktop + Mobile
-  // =======================
-  nextBtn.addEventListener("click", () => updateIndex("next"));
-  prevBtn.addEventListener("click", () => updateIndex("prev"));
-}
-
-// Criar a barra de scroll dinamicamente
 const scrollIndicator = document.createElement("div");
 scrollIndicator.classList.add("scroll-indicator");
 document.body.appendChild(scrollIndicator);
 
-// Atualizar barra no scroll
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -191,8 +130,8 @@ if (contatoForm) {
 
     try {
       const response = await fetch("http://localhost:3000/send", {
-        //Dominio HostGator
         headers: { "Content-Type": "application/json" },
+        method: "POST",
         body: JSON.stringify(formData),
       });
 
@@ -210,3 +149,39 @@ if (contatoForm) {
     }
   });
 }
+
+const swiper = new Swiper(".servicos-swiper", {
+  loop: true, // Se quiser o loop infinito no mobile, COMENTE 'centeredSlides: true' abaixo.
+  slidesPerView: 3,
+  spaceBetween: 30,
+  // === ADICIONE ESTE BLOCO DE VOLTA ===
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // =================================
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    1200: { slidesPerView: 3, spaceBetween: 30 },
+    992: { slidesPerView: 2, spaceBetween: 20 },
+    768: {
+      slidesPerView: 1.1,
+      spaceBetween: 15,
+      centeredSlides: true, // MANTENHA para a centralização perfeita // Removido loop: false
+    },
+    480: {
+      slidesPerView: 1.1,
+      spaceBetween: 15,
+      centeredSlides: true, // Removido loop: false
+    },
+    360: {
+      slidesPerView: 1.1,
+      spaceBetween: 15,
+      centeredSlides: true, // Removido loop: false
+    },
+  },
+});
