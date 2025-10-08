@@ -143,3 +143,24 @@ const swiper = new Swiper(".servicos-swiper", {
     },
   },
 });
+
+// =======================
+// FORMULÁRIO
+// =======================
+
+const form = document.getElementById("contatoForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: formData,
+  });
+
+  const result = await response.json();
+  alert(result.message);
+  if (result.status === "success") form.reset();
+});
