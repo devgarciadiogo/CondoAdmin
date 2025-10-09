@@ -145,7 +145,7 @@ const swiper = new Swiper(".servicos-swiper", {
 });
 
 // =======================
-// FORMULÁRIO EMAILJS
+// FORMULÁRIO EMAILJS COM FEEDBACK
 // =======================
 emailjs.init("PZiP-KOJE0su21pck");
 
@@ -155,15 +155,30 @@ if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    emailjs.sendForm("service_ig4b0fm", "template_7m61o9l", this).then(
-      () => {
-        alert("Mensagem enviada com sucesso!");
-        form.reset();
-      },
-      (err) => {
+    const submitButton = form.querySelector("button[type='submit']");
+    const originalText = submitButton.textContent;
+
+    // Desabilita o botão e mostra loader
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando... ⏳";
+
+    emailjs
+      .sendForm("service_ig4b0fm", "template_7m61o9l", this)
+      .then(() => {
+        submitButton.textContent = "Mensagem enviada! ✅";
+        setTimeout(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+          form.reset();
+        }, 2000); // volta ao normal após 2 segundos
+      })
+      .catch((err) => {
         console.error(err);
-        alert("Erro ao enviar a mensagem, tente novamente.");
-      }
-    );
+        submitButton.textContent = "Erro ao enviar ❌";
+        setTimeout(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }, 2000);
+      });
   });
 }
