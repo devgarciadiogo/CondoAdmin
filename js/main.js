@@ -145,22 +145,25 @@ const swiper = new Swiper(".servicos-swiper", {
 });
 
 // =======================
-// FORMULÁRIO
+// FORMULÁRIO EMAILJS
 // =======================
+emailjs.init("PZiP-KOJE0su21pck");
 
 const form = document.getElementById("contatoForm");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const formData = new FormData(form);
-
-  const response = await fetch(form.action, {
-    method: "POST",
-    body: formData,
+    emailjs.sendForm("service_ig4b0fm", "template_7m61o9l", this).then(
+      () => {
+        alert("Mensagem enviada com sucesso!");
+        form.reset();
+      },
+      (err) => {
+        console.error(err);
+        alert("Erro ao enviar a mensagem, tente novamente.");
+      }
+    );
   });
-
-  const result = await response.json();
-  alert(result.message);
-  if (result.status === "success") form.reset();
-});
+}
