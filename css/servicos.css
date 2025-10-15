@@ -498,7 +498,8 @@ header.scrolled {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  column-gap: 40px; /* Mantém o espaçamento horizontal (entre logos) */
+  row-gap: 10px;    /* Reduz o espaçamento vertical (entre linhas) */
 }
 
 .parceira-logo {
@@ -506,7 +507,7 @@ header.scrolled {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   transition: transform 0.3s ease;
 }
 
@@ -521,6 +522,18 @@ header.scrolled {
 }
 
 /* ======================= */
+/* Ajuste Específico para a logo Condomínio Colinas */
+/* ======================= */
+
+.logo-colinas img {
+    max-height: 350px; 
+}
+
+.logo-colinas {
+     flex: 0 1 400px; 
+}
+
+/* ======================= */
 /* CALL TO ACTION           */
 /* ======================= */
 .cta-section {
@@ -528,6 +541,7 @@ header.scrolled {
   padding: 80px 20px;
   text-align: center;
   color: #0d775c;
+  margin-top: -100px;
 }
 
 .cta-section .cta-title {
