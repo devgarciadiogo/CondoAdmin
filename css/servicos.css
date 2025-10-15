@@ -780,6 +780,10 @@ textarea:focus {
   .parceiras-section { padding: 50px 15px; }
   .parceiras-section .section-title { font-size: 1.8rem; }
   .parceiras-section .section-description { font-size: 1rem; }
+  .parceiras-logos {
+        row-gap: 20px; 
+        column-gap: 30px; 
+    }
 
   .cta-section { padding: 50px 15px; }
   .cta-section .cta-title { font-size: 1.8rem; }
@@ -818,8 +822,38 @@ textarea:focus {
   .parceiras-section { padding: 40px 12px; }
   .parceiras-section .section-title { font-size: 1.5rem; }
   .parceiras-section .section-description { font-size: 0.95rem; }
+.parceiras-logos {
+        row-gap: 0px; 
+        column-gap: 15px; 
+    }
+    
+    /* AÇÃO 1: Remover o padding interno que empurra as logos */
+    .parceira-logo {
+        flex: 0 1 45%; 
+        padding: 0; /* Zera o padding que estava em 10px no padrão */
+    }
 
-  .cta-section { padding: 40px 12px; }
+    /* AÇÃO 2: A logo Colinas deve ter um margin-top ainda menor ou zero */
+    .logo-colinas {
+        flex: 0 1 100%; 
+        margin-top: 0px; /* Garante que não há margem extra */
+        justify-content: center; 
+    }
+    
+    .logo-colinas img {
+        max-height: 500px; /* Mantém o tamanho grande */
+    }
+
+    /* 4. Zerar o PADDING-TOP da próxima seção */
+    .cta-section { 
+        /* Altera para zerar o padding superior, se for ele quem está empurrando */
+        padding-top: 20px; /* Deixe um mínimo, mas se for o caso, tente 0px */
+        padding-bottom: 40px; 
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
   .cta-section .cta-title { font-size: 1.4rem; line-height: 1.2; }
   .cta-section .cta-description { font-size: 0.95rem; }
 
