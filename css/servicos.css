@@ -502,7 +502,7 @@ header.scrolled {
 }
 
 .parceira-logo {
-  flex: 0 1 150px;
+  flex: 0 1 220px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,12 +512,12 @@ header.scrolled {
 
 .parceira-logo img {
   max-width: 100%;
-  max-height: 100px;
+  max-height: 130px;
   object-fit: contain;
 }
 
 .parceira-logo:hover {
-  transform: scale(1.05);
+ transform: scale(1.08); /* leve destaque no hover */
 }
 
 /* ======================= */
