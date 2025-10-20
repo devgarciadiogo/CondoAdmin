@@ -498,39 +498,84 @@ header.scrolled {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 40px; /* Mantém o espaçamento horizontal (entre logos) */
-  row-gap: 10px;    /* Reduz o espaçamento vertical (entre linhas) */
+  column-gap: 40px; 
+  row-gap: 50px; 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  padding: 20px 0;
 }
 
 .parceira-logo {
-  flex: 0 1 220px;
+  flex: 0 1 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0px;
   transition: transform 0.3s ease;
+  min-height: 160px;
 }
 
 .parceira-logo img {
-  max-width: 100%;
-  max-height: 130px;
+  max-width: 220px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
   object-fit: contain;
 }
 
 .parceira-logo:hover {
- transform: scale(1.08); /* leve destaque no hover */
+ transform: scale(1.10); /
 }
 
 /* ======================= */
-/* Ajuste Específico para a logo Condomínio Colinas */
+/* Ajustes Específicos para Uniformização de Tamanho */
 /* ======================= */
 
-.logo-colinas img {
-    max-height: 240px; 
+/* =================================== */
+/* Ação 1: Ajuste Suave nas Logos Maiores (Primeira Linha) */
+/* =================================== */
+
+.parceira-logo.logo-suave img {
+    max-height: 200px;
+    max-width: 200px; 
 }
 
-.logo-colinas {
-     flex: 0 1 400px; 
+
+.parceira-logo.logo-suave:not(.logo-vertical) img {
+    max-width: 200px;
+}
+
+.parceira-logo.logo-smartkon img {
+    max-height: 140px; 
+    max-width: 140px;  
+}
+
+/* 1. Condomínio Colinas do Engenho (Vertical) */
+.parceira-logo.logo-colinas-ajuste img {
+  max-height: 200px; 
+   max-width: 200px; 
+}
+
+/* 2. MC Emporium (Circular/Pequena) */
+.parceira-logo.logo-emporium-ajuste img {
+  max-height: 200px; 
+  max-width: 200px; 
+}
+
+/* 3. Grupo Marvie (Horizontal/Pequena) */
+.parceira-logo.logo-marvie-ajuste img {
+  max-height: 250px; 
+  max-width: 300px; 
+}
+
+.parceiras-logos > .parceira-logo:last-child:nth-child(4n + 1) { 
+    flex: 1 1 100%; 
+}
+
+/* Se por acaso Colinas e Emporium estiverem sozinhas (como na sua imagem), elas também se centralizam */
+.parceiras-logos > .parceira-logo:nth-child(5):last-child:nth-child(4n + 1),
+.parceiras-logos > .parceira-logo:nth-child(6):last-child:nth-child(4n + 1) { 
+    flex: 1 1 100%;
 }
 
 /* ======================= */
