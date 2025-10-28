@@ -145,81 +145,52 @@ const swiper = new Swiper(".servicos-swiper", {
 });
 
 // =======================
-// FORMULÁRIO COM FEEDBACK (Web3Forms)
+// FORMULÁRIO COM EMAILJS (envia para Outlook)
 // =======================
+
+emailjs.init("SUA_PUBLIC_KEY"); // ex: user_xxx
 
 const form = document.getElementById("contatoForm");
 
 if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); // impede envio imediato
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
     const submitButton = form.querySelector("button[type='submit']");
     const originalText = submitButton.textContent;
 
-    // Remove mensagens antigas
-    const oldMessage = document.getElementById("form-message");
-    if (oldMessage) oldMessage.remove();
+    // remove mensagem antiga
+    const old = document.getElementById("form-message");
+    if (old) old.remove();
 
-    // Cria elemento de mensagem
+    // cria elemento de mensagem
     const messageEl = document.createElement("p");
     messageEl.id = "form-message";
-    messageEl.style.marginTop = "10px";
-    messageEl.style.fontWeight = "bold";
-
+    messageEl.style.marginTop = "12px";
+    messageEl.style.fontWeight = "600";
     form.appendChild(messageEl);
 
-    // Mostra status "Enviando..."
+    // feedback inicio
     submitButton.disabled = true;
     submitButton.textContent = "Enviando... ⏳";
 
-    // Verifica se o formulário é válido
-    if (form.checkValidity()) {
-      // Envia o formulário usando fetch para Web3Forms
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
+    emailjs
+      .sendForm("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", this)
+      .then(() => {
+        messageEl.textContent = "Mensagem enviada com sucesso! ✅";
+        messageEl.style.color = "green";
+        form.reset();
       })
-        .then(async (response) => {
-          if (response.ok) {
-            messageEl.textContent = "Mensagem enviada! ✅";
-            messageEl.style.color = "green";
-            form.reset();
-          } else {
-            const data = await response.json().catch(() => ({}));
-            messageEl.textContent =
-              "Erro ao enviar ❌. Tente novamente mais tarde.";
-            messageEl.style.color = "red";
-            console.error("Erro do servidor:", data);
-          }
-        })
-        .catch((error) => {
-          messageEl.textContent =
-            "Erro ao enviar ❌. Verifique sua conexão e tente novamente.";
-          messageEl.style.color = "red";
-          console.error("Erro ao enviar:", error);
-        })
-        .finally(() => {
-          // Volta botão ao normal
-          setTimeout(() => {
-            submitButton.disabled = false;
-            submitButton.textContent = originalText;
-          }, 2000);
-        });
-    } else {
-      // Erro: algum campo está inválido
-      messageEl.textContent =
-        "Erro ao enviar ❌. Preencha todos os campos corretamente.";
-      messageEl.style.color = "red";
-
-      // Volta botão ao normal
-      setTimeout(() => {
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-      }, 2000);
-    }
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        messageEl.textContent = "Erro ao enviar. Tente novamente mais tarde ❌";
+        messageEl.style.color = "red";
+      })
+      .finally(() => {
+        setTimeout(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }, 2500);
+      });
   });
 }
