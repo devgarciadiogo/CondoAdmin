@@ -145,7 +145,7 @@ const swiper = new Swiper(".servicos-swiper", {
 });
 
 // =======================
-// FORMULÁRIO COM FEEDBACK (FormSubmit)
+// FORMULÁRIO COM FEEDBACK (Web3Forms)
 // =======================
 
 const form = document.getElementById("contatoForm");
@@ -175,17 +175,40 @@ if (form) {
 
     // Verifica se o formulário é válido
     if (form.checkValidity()) {
-      // Sucesso
-      messageEl.textContent = "Mensagem enviada! ✅";
-      messageEl.style.color = "green";
+      // Envia o formulário usando fetch para Web3Forms
+      const formData = new FormData(form);
 
-      // Após 2s, envia o formulário de verdade
-      setTimeout(() => {
-        form.submit();
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-        form.reset();
-      }, 2000);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
+        .then(async (response) => {
+          if (response.ok) {
+            messageEl.textContent = "Mensagem enviada! ✅";
+            messageEl.style.color = "green";
+            form.reset();
+          } else {
+            const data = await response.json().catch(() => ({}));
+            messageEl.textContent =
+              "Erro ao enviar ❌. Tente novamente mais tarde.";
+            messageEl.style.color = "red";
+            console.error("Erro do servidor:", data);
+          }
+        })
+        .catch((error) => {
+          messageEl.textContent =
+            "Erro ao enviar ❌. Verifique sua conexão e tente novamente.";
+          messageEl.style.color = "red";
+          console.error("Erro ao enviar:", error);
+        })
+        .finally(() => {
+          // Volta botão ao normal
+          setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+          }, 2000);
+        });
     } else {
       // Erro: algum campo está inválido
       messageEl.textContent =
