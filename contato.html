@@ -104,29 +104,38 @@
 
             <!-- LADO DIREITO: FORMULÁRIO -->
             <div class="contato-left">
-                <form id="contatoForm" class="form-contato" action="#" method="post">
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-                    </div>
+            <form
+                id="contatoForm"
+                class="form-contato"
+                action="https://formsubmit.co/ajax/atendimento@lmcondominios.com.br"
+                method="POST"
+            >
+                <input type="hidden" name="_subject" value="Nova mensagem do site LM Condomínios">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="box">
 
-                    <div class="form-group">
-                        <label for="assunto">Assunto</label>
-                        <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
-                    </div>
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="Nome" placeholder="Seu nome completo" required>
+                </div>
 
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-                    </div>
+                <div class="form-group">
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" name="Assunto" placeholder="Assunto da mensagem" required>
+                </div>
 
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
-                    </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
+                </div>
 
-                    <button type="submit" class="btn enviar-btn">Enviar Mensagem</button>
-                </form>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn enviar-btn">Enviar Mensagem</button>
+            </form>
             </div>
         </div>
     </section>
@@ -187,7 +196,6 @@
     </a>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>

@@ -143,42 +143,46 @@ const swiper = new Swiper(".servicos-swiper", {
     },
   },
 });
-
 // =======================
-// FORMULÁRIO EMAILJS COM FEEDBACK
+// FORMULÁRIO COM FEEDBACK (FormSubmit)
 // =======================
-emailjs.init("PZiP-KOJE0su21pck");
 
 const form = document.getElementById("contatoForm");
 
 if (form) {
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const submitButton = form.querySelector("button[type='submit']");
     const originalText = submitButton.textContent;
 
-    // Desabilita o botão e mostra loader
+    // Mostra status "enviando..."
     submitButton.disabled = true;
     submitButton.textContent = "Enviando... ⏳";
 
-    emailjs
-      .sendForm("service_ig4b0fm", "template_7m61o9l", this)
-      .then(() => {
-        submitButton.textContent = "Mensagem enviada! ✅";
-        setTimeout(() => {
-          submitButton.disabled = false;
-          submitButton.textContent = originalText;
-          form.reset();
-        }, 2000); // volta ao normal após 2 segundos
-      })
-      .catch((err) => {
-        console.error(err);
-        submitButton.textContent = "Erro ao enviar ❌";
-        setTimeout(() => {
-          submitButton.disabled = false;
-          submitButton.textContent = originalText;
-        }, 2000);
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
       });
+
+      if (response.ok) {
+        submitButton.textContent = "Mensagem enviada! ✅";
+        form.reset();
+      } else {
+        submitButton.textContent = "Erro ao enviar ❌";
+      }
+    } catch (error) {
+      console.error("Erro ao enviar o formulário:", error);
+      submitButton.textContent = "Erro ao enviar ❌";
+    }
+
+    // Volta ao normal após 2 segundos
+    setTimeout(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }, 2000);
   });
 }
