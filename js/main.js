@@ -148,7 +148,7 @@ const swiper = new Swiper(".servicos-swiper", {
 // FORMULÁRIO COM EMAILJS (envia para Outlook)
 // =======================
 
-emailjs.init("SUA_PUBLIC_KEY"); // ex: user_xxx
+emailjs.init("PZiP-KOJE0su21pck"); // ex: user_xxx
 
 const form = document.getElementById("contatoForm");
 
@@ -175,7 +175,7 @@ if (form) {
     submitButton.textContent = "Enviando... ⏳";
 
     emailjs
-      .sendForm("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", this)
+      .sendForm("service_rr4wtdl", "template_nh3lkhw", this)
       .then(() => {
         messageEl.textContent = "Mensagem enviada com sucesso! ✅";
         messageEl.style.color = "green";
