@@ -143,6 +143,7 @@ const swiper = new Swiper(".servicos-swiper", {
     },
   },
 });
+
 // =======================
 // FORMULÁRIO COM FEEDBACK (FormSubmit)
 // =======================
@@ -150,39 +151,52 @@ const swiper = new Swiper(".servicos-swiper", {
 const form = document.getElementById("contatoForm");
 
 if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // impede envio imediato
 
     const submitButton = form.querySelector("button[type='submit']");
     const originalText = submitButton.textContent;
 
-    // Mostra status "enviando..."
+    // Remove mensagens antigas
+    const oldMessage = document.getElementById("form-message");
+    if (oldMessage) oldMessage.remove();
+
+    // Cria elemento de mensagem
+    const messageEl = document.createElement("p");
+    messageEl.id = "form-message";
+    messageEl.style.marginTop = "10px";
+    messageEl.style.fontWeight = "bold";
+
+    form.appendChild(messageEl);
+
+    // Mostra status "Enviando..."
     submitButton.disabled = true;
     submitButton.textContent = "Enviando... ⏳";
 
-    try {
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
+    // Verifica se o formulário é válido
+    if (form.checkValidity()) {
+      // Sucesso
+      messageEl.textContent = "Mensagem enviada! ✅";
+      messageEl.style.color = "green";
 
-      if (response.ok) {
-        submitButton.textContent = "Mensagem enviada! ✅";
+      // Após 2s, envia o formulário de verdade
+      setTimeout(() => {
+        form.submit();
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
         form.reset();
-      } else {
-        submitButton.textContent = "Erro ao enviar ❌";
-      }
-    } catch (error) {
-      console.error("Erro ao enviar o formulário:", error);
-      submitButton.textContent = "Erro ao enviar ❌";
-    }
+      }, 2000);
+    } else {
+      // Erro: algum campo está inválido
+      messageEl.textContent =
+        "Erro ao enviar ❌. Preencha todos os campos corretamente.";
+      messageEl.style.color = "red";
 
-    // Volta ao normal após 2 segundos
-    setTimeout(() => {
-      submitButton.disabled = false;
-      submitButton.textContent = originalText;
-    }, 2000);
+      // Volta botão ao normal
+      setTimeout(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }, 2000);
+    }
   });
 }
